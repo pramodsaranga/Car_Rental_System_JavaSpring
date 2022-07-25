@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -23,4 +25,16 @@ public class Booking {
     private Date rentStartDate;
     private Date rentEndDate;
     private String drName;
+
+    @ManyToOne
+    @JoinColumn(name = "registration", referencedColumnName = "email")
+    private Registration registration;
+
+    @ManyToOne
+    @JoinColumn(name = "car", referencedColumnName = "carNumber")
+    private Car car;
+
+    @ManyToOne
+    @JoinColumn(name = "driver", referencedColumnName = "driverId")
+    private Driver driver;
 }
