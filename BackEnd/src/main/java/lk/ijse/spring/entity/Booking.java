@@ -27,14 +27,14 @@ public class Booking {
     private String drName;
 
     @ManyToOne
-    @JoinColumn(name = "registration", referencedColumnName = "email")
-    private Registration registration;
+    @JoinColumn(name="customer",referencedColumnName = "email")
+    private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "car", referencedColumnName = "carNumber")
+    @JoinColumn(name="car",referencedColumnName = "carNumber")
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "driver", referencedColumnName = "driverId")
+    @JoinColumn(name="driver",referencedColumnName = "driverId")
     private Driver driver;
 }

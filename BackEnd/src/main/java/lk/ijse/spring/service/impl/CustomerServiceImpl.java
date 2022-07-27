@@ -8,9 +8,10 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -23,7 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     ModelMapper modelMapper;
     @Override
     public void saveCustomer(CustomerDTO customerDTO) {
-        if (!customerRepo.existsById(customerDTO.getCusId())) {
+        if (!customerRepo.existsById(customerDTO.getEmail())) {
             customerRepo.save(modelMapper.map(customerDTO, Customer.class));
         } else {
             throw new RuntimeException("Customer Already Exist..!");
@@ -33,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateCustomer(CustomerDTO customerDTO) {
-        if (customerRepo.existsById(customerDTO.getCusId())) {
+        if (customerRepo.existsById(customerDTO.getEmail())) {
             customerRepo.save(modelMapper.map(customerDTO,Customer.class));
         } else {
             throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
@@ -64,5 +65,34 @@ public class CustomerServiceImpl implements CustomerService {
         return modelMapper.map(all,new TypeToken<List<CustomerDTO>>(){
         }.getType());
 
+    }
+
+    @Override
+    public CustomerDTO findEmailAndPassword(String email, String password) {
+        Optional<Customer> cus = customerRepo.findByEmailAndPassword(email, password);
+        if (cus.isPresent()) {
+            return modelMapper.map(cus.get(), CustomerDTO.class);
+        }
+        throw new RuntimeException("Email name and Password Not Matched");
+    }
+
+    @Override
+    public boolean findUser(String email) {
+        boolean isAvailable = customerRepo.existsByEmail(email);
+        if (customerRepo.existsById(email)) {
+            customerRepo.save(modelMapper.map(email, Customer.class));
+            System.out.println(isAvailable+"");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public CustomerDTO findNic(String nic) {
+        Optional<Customer> registration = customerRepo.findByNic(nic);
+        if (registration.isPresent()) {
+            return modelMapper.map(registration.get(), CustomerDTO.class);
+        }
+        throw new RuntimeException("NIC Not Matched");
     }
 }

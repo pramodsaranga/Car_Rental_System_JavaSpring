@@ -15,4 +15,10 @@ public interface CustomerService {
     public CustomerDTO searchCustomer(String id);
 
     public List<CustomerDTO> getAllCustomers();
+
+    CustomerDTO findEmailAndPassword(String email, String password);
+
+    boolean findUser(String email);
+
+    CustomerDTO findNic(String nic);
 }

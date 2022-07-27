@@ -2,9 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>RentalCar.com</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/css/all.min.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{
+            width: 100vm;
+            height: 100vh;
+            background-size: 100%;
+            background-size: 100%;
+            overflow: hidden;
+        }
+        .nav-item {
+            font-family:  "Quicksand";
+            font-weight: bolder;
+            font-size: 18px;
+
+        }
+        .navigation:hover {
+            color: #1a1e21 !important;
+        }
+        body >section> nav > div > a {
+            color: #ffffff !important;
+            font-weight: bolder;
+            font-family:  "Quicksand";
+            font-size: 30px;
+        }
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .navbar-collapse{
+            flex-grow: 0;
+        }
+
+        /*dash board style*/
+
+        #dashBoardContent {
+            width: 100vw;
+            height: 100vh;
+            background: 100%;
+        }
+
+        #description {
+            position: absolute;
+            left: 0;
+            right: 400px;
+            top: 100px;
+            bottom: 49%;
+            margin: auto;
+            width: 41vw;
+            height: 7vh;
+            z-index: 10000;
+        }
+        #text1{
+            font-weight: bold;
+            color: white;
+            font-size: 50px;
+        }
+        #text2{
+            color: white;
+        }
+
+        #imageDashBoardImage {
+            width: 100vw;
+            height: 100vh;
+            background: url("assets/images/car1.jpg");
+            background-size: 100% 100%;
+        }
+
+
+    </style>
 </head>
 <body>
+<!--------------------Nav Content Start--------------------------->
+<section class="container-fluid" id="NavContent">
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark navtop">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="">RentalCar.com</a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-5 mb-lg-0">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navigation" href="#" id="linkServices">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navigation" href="#" id="linkAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navigation" href="#" id="linkCarDetails">Car Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navigation" href="#" id="linkLogin">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<!----------------------Dash Board Content Start------------------->
+<section class="container-fluid" id="dashBoardContent">
+    <div id="imageDashBoardImage">
+        <div id="description">
+            <h1 id="text1">FIND THE RIGHT <br>CAR FOR YOU</h1>
+            <h2 id="text2">We have more<br>cars for you to choose.</h2>
+        </div>
+    </div>
+</section>
+
+<script src="assets/boostrap/js/bootstrap.bundle.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+</script>
 
 </body>
 </html>

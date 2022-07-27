@@ -8,9 +8,10 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -62,5 +63,24 @@ public class DriverServiceImpl implements DriverService {
         List<Driver> all = driverRepo.findAll();
         return modelMapper.map(all,new TypeToken<List<DriverDTO>>(){
         }.getType());
+    }
+
+    @Override
+    public DriverDTO findName(String name) {
+        Optional<Driver> driver = driverRepo.findByName(name);
+        if (driver.isPresent()) {
+            return modelMapper.map(driver.get(), DriverDTO.class);
+        }
+        return null;
+    }
+
+    @Override
+    public DriverDTO findEmailAndPassword(String email, String password) {
+        Optional<Driver> cus = driverRepo.findByEmailAndPassword(email,password);
+        if (cus.isPresent()) {
+            return modelMapper.map(cus.get(), DriverDTO.class);
+        }
+        throw new RuntimeException("Email name and Password Not Matched");
+
     }
 }

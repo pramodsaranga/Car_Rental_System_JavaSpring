@@ -15,4 +15,8 @@ public interface DriverService {
     public DriverDTO searchDriver(String id);
 
     public List<DriverDTO> getAllDrivers();
+
+    DriverDTO findName(String name);
+
+    DriverDTO findEmailAndPassword(String email, String password);
 }
