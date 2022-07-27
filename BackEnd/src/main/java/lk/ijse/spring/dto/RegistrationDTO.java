@@ -10,6 +10,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class RegistrationDTO {
+    private String registrationId;
     private String email;
     private String password;
     private String nic;

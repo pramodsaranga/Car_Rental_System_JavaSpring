@@ -15,6 +15,7 @@ import javax.persistence.Id;
 @Entity
 public class Registration {
     @Id
+    private String registrationId;
     private String email;
     private String password;
     private String nic;

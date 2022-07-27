@@ -28,7 +28,7 @@ public class BookingServiceImpl implements BookingService {
         if (!bookingRepo.existsById(bookingDTO.getRequestNumber())) {
             bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
         } else {
-            throw new RuntimeException("Customer Already Exist..!");
+            throw new RuntimeException("Booking Already Exist..!");
         }
     }
 
@@ -37,7 +37,7 @@ public class BookingServiceImpl implements BookingService {
         if (bookingRepo.existsById(bookingDTO.getRequestNumber())) {
             bookingRepo.save(modelMapper.map(bookingDTO,Booking.class));
         } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+            throw new RuntimeException("No Such Booking To Update..! Please Check the ID..!");
         }
     }
 
@@ -46,7 +46,7 @@ public class BookingServiceImpl implements BookingService {
         if (bookingRepo.existsById(id)){
             bookingRepo.deleteById(id);
         }else{
-            throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+            throw new RuntimeException("Please check the Booking ID.. No Such Booking..!");
         }
     }
 
@@ -55,7 +55,7 @@ public class BookingServiceImpl implements BookingService {
         if (bookingRepo.existsById(id)){
             return modelMapper.map(bookingRepo.findById(id).get(), BookingDTO.class);
         }else{
-            throw new RuntimeException("No Customer For "+id+" ..!");
+            throw new RuntimeException("No Booking For "+id+" ..!");
         }
     }
 

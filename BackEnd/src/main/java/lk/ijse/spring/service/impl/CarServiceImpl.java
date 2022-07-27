@@ -26,7 +26,7 @@ public class CarServiceImpl implements CarService {
         if (!carRepo.existsById(carDTO.getCarNumber())) {
             carRepo.save(modelMapper.map(carDTO, Car.class));
         } else {
-            throw new RuntimeException("Customer Already Exist..!");
+            throw new RuntimeException("Car Already Exist..!");
         }
     }
 
@@ -35,7 +35,7 @@ public class CarServiceImpl implements CarService {
         if (carRepo.existsById(carDTO.getCarNumber())) {
             carRepo.save(modelMapper.map(carDTO,Car.class));
         } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+            throw new RuntimeException("No Such Car To Update..! Please Check the ID..!");
         }
     }
 
@@ -44,7 +44,7 @@ public class CarServiceImpl implements CarService {
         if (carRepo.existsById(id)){
             carRepo.deleteById(id);
         }else{
-            throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+            throw new RuntimeException("Please check the Car ID.. No Such Car..!");
         }
     }
 
@@ -53,7 +53,7 @@ public class CarServiceImpl implements CarService {
         if (carRepo.existsById(id)){
             return modelMapper.map(carRepo.findById(id).get(), CarDTO.class);
         }else{
-            throw new RuntimeException("No Customer For "+id+" ..!");
+            throw new RuntimeException("No Car For "+id+" ..!");
         }
     }
 

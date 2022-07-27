@@ -26,7 +26,7 @@ public class AdminServiceImpl implements AdminService {
         if (!adminRepo.existsById(adminDTO.getUsername())) {
             adminRepo.save(modelMapper.map(adminDTO, Admin.class));
         } else {
-            throw new RuntimeException("Customer Already Exist..!");
+            throw new RuntimeException("Admin Already Exist..!");
         }
     }
 
@@ -35,7 +35,7 @@ public class AdminServiceImpl implements AdminService {
         if (adminRepo.existsById(adminDTO.getUsername())) {
             adminRepo.save(modelMapper.map(adminDTO,Admin.class));
         } else {
-            throw new RuntimeException("No Such Customer To Update..! Please Check the ID..!");
+            throw new RuntimeException("No Such Admin To Update..! Please Check the ID..!");
         }
 
     }
@@ -45,7 +45,7 @@ public class AdminServiceImpl implements AdminService {
         if (adminRepo.existsById(id)){
             adminRepo.deleteById(id);
         }else{
-            throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+            throw new RuntimeException("Please check the Admin ID.. No Such Admin..!");
         }
     }
 
@@ -54,7 +54,7 @@ public class AdminServiceImpl implements AdminService {
         if (adminRepo.existsById(id)){
             return modelMapper.map(adminRepo.findById(id).get(), AdminDTO.class);
         }else{
-            throw new RuntimeException("No Customer For "+id+" ..!");
+            throw new RuntimeException("No Admin For "+id+" ..!");
         }
     }
 
