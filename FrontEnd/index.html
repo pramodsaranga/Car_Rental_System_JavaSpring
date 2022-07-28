@@ -22,16 +22,11 @@
             font-family:  "Quicksand";
             font-weight: bolder;
             font-size: 18px;
+            /*background-color: #0b5ed7;*/
 
         }
         .navigation:hover {
             color: #1a1e21 !important;
-        }
-        body >section> nav > div > a {
-            color: #ffffff !important;
-            font-weight: bolder;
-            font-family:  "Quicksand";
-            font-size: 30px;
         }
         .container-fluid {
             padding-left: 0;
@@ -52,8 +47,8 @@
         #description {
             position: absolute;
             left: 0;
-            right: 400px;
-            top: 100px;
+            right: 380px;
+            top: 200px;
             bottom: 49%;
             margin: auto;
             width: 41vw;
@@ -82,31 +77,42 @@
 <body>
 <!--------------------Nav Content Start--------------------------->
 <section class="container-fluid" id="NavContent">
-    <nav class="navbar navbar-expand-lg bg-success navbar-dark navtop">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
         <div class="container-fluid">
-            <a class="navbar-brand " href="">RentalCar.com</a>
+            <h1 class="text-white">RentalCar.com</h1>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler"
                     data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-5 mb-lg-0">
-                    <li class="nav-item">
-                        <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-4 ">
+                    <li class="nav-item me-3">
+                        <a aria-current="page" class="nav-link active navigation" href="#" id="Home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkServices">Services</a>
+                    <li class="nav-item me-3">
+                        <a class="nav-link navigation" href="#" id="Services">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkAbout">About</a>
+                    <li class="nav-item me-3">
+                        <a class="nav-link navigation" href="#" id="About">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkCarDetails">Car Details</a>
+                    <li class="nav-item me-3">
+                        <a class="nav-link navigation" href="#" id="CarDetails">Car Details</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkLogin">Login</a>
+                    <li class="nav-item me-3">
+                            <button type="button" class="btn btn-lg btn-primary mx-2">Login</button>
                     </li>
+                    <ul class="navbar-nav me-auto mb-5 mb-lg-0 mt-3">
+                        <li class="nav-item">
+                            <a class="nav-link navigation" href="#" id="Customer">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navigation" href="#" id="Admin">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navigation" href="#" id="Driver">Driver</a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </div>
