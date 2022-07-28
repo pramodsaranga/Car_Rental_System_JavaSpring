@@ -71,7 +71,6 @@
             background-size: 100% 100%;
         }
 
-
     </style>
 </head>
 <body>
@@ -88,16 +87,16 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto  mb-lg-4 ">
                     <li class="nav-item me-3">
-                        <a aria-current="page" class="nav-link active navigation" href="#" id="Home">Home</a>
+                        <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navigation" href="#" id="linkServices">Services</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link navigation" href="#" id="Services">Services</a>
+                        <a class="nav-link navigation" href="#" id="linkAbout">About</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link navigation" href="#" id="About">About</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a class="nav-link navigation" href="#" id="CarDetails">Car Details</a>
+                        <a class="nav-link navigation" href="#" id="linkCarDetails">Car Details</a>
                     </li>
                     <li class="nav-item me-3">
                             <button type="button" class="btn btn-lg btn-primary mx-2">Login</button>
@@ -129,9 +128,54 @@
     </div>
 </section>
 
+<!------------------------------Services------------------------->
+<section class="container-fluid" id="services">
+
+</section>
+
+<!---------------------------About------------------------------->
+<section class="container-fluid" id="about">
+
+</section>
+
+<!-------------------------Car Details-------------------------->
+<section class="container-fluid" id="carDetails">
+
+</section>
+
+</section>
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
+    $("#dashBoardContent").css("display", "block");
+    $("#Services").css("display", "none");
+    $("#About").css("display", "none");
+    $("#CarDetails").css("display", "none");
+
+    $("#linkHome").click(function () {
+        $("#dashBoardContent").css("display", "block");
+        $("#Services").css("display", "none");
+        $("#About").css("display", "none");
+        $("#CarDetails").css("display", "none");
+    });
+
+    $("#linkServices").click(function () {
+        $("#dashBoardContent").css("display", "none");
+        $("#Services").css("display", "block");
+    });
+
+    $("#linkAbout").click(function () {
+        $("#About").css("display", "none");
+        $("#dashBoardContent").css("display", "none");
+        $("#Services").css("display", "none");
+    });
+
+    $("#linkCarDetails").click(function () {
+        $("#CarDetails").css("display", "block");
+        $("#About").css("display", "none");
+        $("#dashBoardContent").css("display", "none");
+        $("#Services").css("display", "none");
+    });
 
 </script>
 
