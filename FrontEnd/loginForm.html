@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/css/all.min.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            width: 100vm;
+            height: 100vh;
+            background-size: 100%;
+            background-size: 100%;
+            overflow: hidden;
+            background-color: #c9c4ff;
+        }
+        body>section:nth-child(1){
+            width: 600px;
+            height: 500px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 10px ;
+            background-color: white;
+
+            /*box-shadow: 0px 5px 15px 1px #8b6161;*/
+        }
+        body>section:nth-child(1)>div{
+            width: 280px;
+            height: 490px;
+            position: absolute;
+            margin: auto;
+            left: 310px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 10px ;
+            background-color:#04414d;
+        }
+        #text1{
+            font-weight: bold;
+            color: #04414d;
+            font-size: 30px;
+            font-family: "Arial Rounded MT Bold";
+            position: absolute;
+            margin: auto;
+            left: 10px;
+            right: 0;
+            top: 20px;
+            bottom: 0;
+        }
+        #text{
+            font-weight: bold;
+            color: white;
+            font-size: 45px;
+            font-family:  "Baskerville Old Face";
+            position: absolute;
+            margin: auto;
+            left: 30px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        #sign{
+            position: relative;
+            margin: auto;
+            left: 80px;
+            right: 0;
+            top: 50px;
+            bottom: 0;
+        }
+        body>section>form{
+            position: relative;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 100px;
+            bottom: 0;
+        }
+        #Back{
+            position: relative;
+            margin: auto;
+            left: 1150px;
+            right: 0;
+            top: 10px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h1 id="text1">SIGN UP</h1>
+    <form >
+        <div class="mb-3 col-6">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3 col-6">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button id="sign" type="submit" class="btn btn-primary col-4">Sing In</button>
+    </form>
+    <div>
+        <h1 id="text">Welcome</h1>
+    </div>
+</section>
+
+<a class=" btn btn-outline-success col-1 mt-3" href="index.html" id="Back">LogOut</a>
+<script src="assets/boostrap/js/bootstrap.bundle.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>

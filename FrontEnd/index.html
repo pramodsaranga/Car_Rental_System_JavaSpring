@@ -22,7 +22,6 @@
             font-family:  "Quicksand";
             font-weight: bolder;
             font-size: 18px;
-            /*background-color: #0b5ed7;*/
 
         }
         .navigation:hover {
@@ -35,13 +34,16 @@
         .navbar-collapse{
             flex-grow: 0;
         }
+        #NavContent{
+            height: fit-content;
+        }
 
         /*dash board style*/
 
         #dashBoardContent {
             width: 100vw;
             height: 100vh;
-            background: 100%;
+            background: 50%;
         }
 
         #description {
@@ -55,11 +57,13 @@
             height: 7vh;
             z-index: 10000;
         }
+
         #text1{
             font-weight: bold;
             color: white;
             font-size: 50px;
         }
+
         #text2{
             color: white;
         }
@@ -71,6 +75,59 @@
             background-size: 100% 100%;
         }
 
+        /*service style*/
+
+
+        body>section:nth-child(3) {
+            width: 100vw;
+            height: 100vh;
+            background: 100%;
+        }
+       body>section:nth-child(3)>section>h1 {
+            position:relative;
+            left: 0;
+            right: 380px;
+            top: 200px;
+            bottom: 49%;
+            margin: auto;
+            width: 41vw;
+            height: 7vh;
+            color: black;
+        }
+        /*About style*/
+        body>section:nth-child(4) {
+            width: 100vw;
+            height: 100vh;
+            background: 100%;
+        }
+        body>section:nth-child(4)>section>h1 {
+            position:relative;
+            left: 0;
+            right: 380px;
+            top: 200px;
+            bottom: 49%;
+            margin: auto;
+            width: 41vw;
+            height: 7vh;
+            color: black;
+        }
+        /*Car Details style*/
+        body>section:nth-child(5) {
+            width: 100vw;
+            height: 100vh;
+            background: 100%;
+        }
+        body>section:nth-child(5)>section>h1 {
+            position:relative;
+            left: 0;
+            right: 380px;
+            top: 200px;
+            bottom: 49%;
+            margin: auto;
+            width: 41vw;
+            height: 7vh;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +135,7 @@
 <section class="container-fluid" id="NavContent">
     <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
         <div class="container-fluid">
-            <h1 class="text-white">RentalCar.com</h1>
+            <h1 id="fold_1" style="color: white">Ren<span style="color:#2DABAB">talCar.com</span></h1>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler"
                     data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
@@ -89,29 +146,19 @@
                     <li class="nav-item me-3">
                         <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkServices">Services</a>
+                    <li class="nav-item me-3" >
+                        <a class="nav-link active navigation" href="#" id="linkServices">Services</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link navigation" href="#" id="linkAbout">About</a>
+                        <a class="nav-link active navigation" href="#" id="linkAbout">About</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link navigation" href="#" id="linkCarDetails">Car Details</a>
+                        <a class="nav-link active navigation" href="#" id="linkCarDetails">Car Details</a>
                     </li>
                     <li class="nav-item me-3">
-                            <button type="button" class="btn btn-lg btn-primary mx-2">Login</button>
+<!--                            <button type="button" class="btn btn-lg btn-primary mx-2">Login</button>-->
+                        <a type="button" class="nav-link navigation btn btn-lg btn-primary mx-2" href="loginForm.html" id="Customer">Login</a>
                     </li>
-                    <ul class="navbar-nav me-auto mb-5 mb-lg-0 mt-3">
-                        <li class="nav-item">
-                            <a class="nav-link navigation" href="#" id="Customer">Customer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link navigation" href="#" id="Admin">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link navigation" href="#" id="Driver">Driver</a>
-                        </li>
-                    </ul>
                 </ul>
             </div>
         </div>
@@ -131,50 +178,59 @@
 <!------------------------------Services------------------------->
 <section class="container-fluid" id="services">
 
+  <section>
+      <h1>Hi Hasa</h1>
+  </section>
+
 </section>
 
 <!---------------------------About------------------------------->
 <section class="container-fluid" id="about">
 
+    <section>
+        <h1>Hi Saranga</h1>
+    </section>
+
 </section>
 
 <!-------------------------Car Details-------------------------->
 <section class="container-fluid" id="carDetails">
-
+    <section>
+        <h1>Hi Sathya</h1>
+    </section>
 </section>
 
-</section>
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
     $("#dashBoardContent").css("display", "block");
-    $("#Services").css("display", "none");
-    $("#About").css("display", "none");
-    $("#CarDetails").css("display", "none");
 
     $("#linkHome").click(function () {
         $("#dashBoardContent").css("display", "block");
-        $("#Services").css("display", "none");
-        $("#About").css("display", "none");
-        $("#CarDetails").css("display", "none");
+        $("#services").css("display", "none");
+        $("#about").css("display", "none");
+        $("#carDetails").css("display", "none");
     });
 
     $("#linkServices").click(function () {
-        $("#dashBoardContent").css("display", "none");
         $("#Services").css("display", "block");
+        $("#dashBoardContent").css("display", "none");
+        $("#about").css("display", "none");
+        $("#carDetails").css("display", "none");
     });
 
     $("#linkAbout").click(function () {
-        $("#About").css("display", "none");
+        $("#about").css("display", "block");
         $("#dashBoardContent").css("display", "none");
-        $("#Services").css("display", "none");
+        $("#services").css("display", "none");
+        $("#carDetails").css("display", "none");
     });
 
     $("#linkCarDetails").click(function () {
-        $("#CarDetails").css("display", "block");
-        $("#About").css("display", "none");
+        $("#carDetails").css("display", "block");
+        $("#about").css("display", "none");
         $("#dashBoardContent").css("display", "none");
-        $("#Services").css("display", "none");
+        $("#services").css("display", "none");
     });
 
 </script>
