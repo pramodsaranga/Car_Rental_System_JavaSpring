@@ -9,7 +9,7 @@
     <link href="assets/styles/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <style>
-        body{
+        #logBody{
             width: 100vm;
             height: 100vh;
             background-size: 100%;
@@ -17,7 +17,7 @@
             overflow: hidden;
             background-color: #c9c4ff;
         }
-        body>section:nth-child(1){
+        #log{
             width: 600px;
             height: 500px;
             position: absolute;
@@ -28,10 +28,8 @@
             bottom: 0;
             border-radius: 10px ;
             background-color: white;
-
-            /*box-shadow: 0px 5px 15px 1px #8b6161;*/
         }
-        body>section:nth-child(1)>div{
+        #logDiv{
             width: 280px;
             height: 490px;
             position: absolute;
@@ -43,7 +41,7 @@
             border-radius: 10px ;
             background-color:#04414d;
         }
-        #text1{
+        #text01{
             font-weight: bold;
             color: #04414d;
             font-size: 30px;
@@ -75,7 +73,7 @@
             top: 50px;
             bottom: 0;
         }
-        body>section>form{
+        #logForm{
             position: relative;
             margin: auto;
             left: 0;
@@ -93,10 +91,10 @@
         }
     </style>
 </head>
-<body>
-<section>
-    <h1 id="text1">SIGN UP</h1>
-    <form >
+<body id="logBody">
+<section id="log">
+    <h1 id="text01">SIGN UP</h1>
+    <form id="logForm">
         <div class="mb-3 col-6">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -108,12 +106,12 @@
         </div>
         <button id="sign" type="submit" class="btn btn-primary col-4">Sing In</button>
     </form>
-    <div>
+    <div id="logDiv">
         <h1 id="text">Welcome</h1>
     </div>
 </section>
 
-<a class=" btn btn-outline-success col-1 mt-3" href="index.html" id="Back">LogOut</a>
+<a class=" btn btn-outline-danger col-1 mt-3" href="index.html" id="Back">LogOut</a>
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 

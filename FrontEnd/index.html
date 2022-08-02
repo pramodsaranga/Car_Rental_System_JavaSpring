@@ -8,13 +8,10 @@
     <link href="assets/fonts/css/all.min.css" rel="stylesheet">
     <link href="assets/styles/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
-
     <style>
-
         body{
             width: 100vm;
             height: 100vh;
-            background-size: 100%;
             background-size: 100%;
             overflow: hidden;
         }
@@ -74,60 +71,9 @@
             background: url("assets/images/car1.jpg");
             background-size: 100% 100%;
         }
+        /*Service style*/
 
-        /*service style*/
 
-
-        body>section:nth-child(3) {
-            width: 100vw;
-            height: 100vh;
-            background: 100%;
-        }
-       body>section:nth-child(3)>section>h1 {
-            position:relative;
-            left: 0;
-            right: 380px;
-            top: 200px;
-            bottom: 49%;
-            margin: auto;
-            width: 41vw;
-            height: 7vh;
-            color: black;
-        }
-        /*About style*/
-        body>section:nth-child(4) {
-            width: 100vw;
-            height: 100vh;
-            background: 100%;
-        }
-        body>section:nth-child(4)>section>h1 {
-            position:relative;
-            left: 0;
-            right: 380px;
-            top: 200px;
-            bottom: 49%;
-            margin: auto;
-            width: 41vw;
-            height: 7vh;
-            color: black;
-        }
-        /*Car Details style*/
-        body>section:nth-child(5) {
-            width: 100vw;
-            height: 100vh;
-            background: 100%;
-        }
-        body>section:nth-child(5)>section>h1 {
-            position:relative;
-            left: 0;
-            right: 380px;
-            top: 200px;
-            bottom: 49%;
-            margin: auto;
-            width: 41vw;
-            height: 7vh;
-            color: black;
-        }
     </style>
 </head>
 <body>
@@ -147,13 +93,13 @@
                         <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
                     </li>
                     <li class="nav-item me-3" >
-                        <a class="nav-link active navigation" href="#" id="linkServices">Services</a>
+                        <a class="nav-link active navigation" href="services.html" id="linkServices">Services</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link active navigation" href="#" id="linkAbout">About</a>
+                        <a class="nav-link active navigation" href="about.html" id="linkAbout">About</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link active navigation" href="#" id="linkCarDetails">Car Details</a>
+                        <a class="nav-link active navigation" href="carDetails.html" id="linkCarDetails">Car Details</a>
                     </li>
                     <li class="nav-item me-3">
 <!--                            <button type="button" class="btn btn-lg btn-primary mx-2">Login</button>-->
@@ -175,63 +121,13 @@
     </div>
 </section>
 
-<!------------------------------Services------------------------->
-<section class="container-fluid" id="services">
-
-  <section>
-      <h1>Hi Hasa</h1>
-  </section>
-
-</section>
-
-<!---------------------------About------------------------------->
-<section class="container-fluid" id="about">
-
-    <section>
-        <h1>Hi Saranga</h1>
-    </section>
-
-</section>
-
-<!-------------------------Car Details-------------------------->
-<section class="container-fluid" id="carDetails">
-    <section>
-        <h1>Hi Sathya</h1>
-    </section>
-</section>
 
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
     $("#dashBoardContent").css("display", "block");
 
-    $("#linkHome").click(function () {
-        $("#dashBoardContent").css("display", "block");
-        $("#services").css("display", "none");
-        $("#about").css("display", "none");
-        $("#carDetails").css("display", "none");
-    });
 
-    $("#linkServices").click(function () {
-        $("#Services").css("display", "block");
-        $("#dashBoardContent").css("display", "none");
-        $("#about").css("display", "none");
-        $("#carDetails").css("display", "none");
-    });
-
-    $("#linkAbout").click(function () {
-        $("#about").css("display", "block");
-        $("#dashBoardContent").css("display", "none");
-        $("#services").css("display", "none");
-        $("#carDetails").css("display", "none");
-    });
-
-    $("#linkCarDetails").click(function () {
-        $("#carDetails").css("display", "block");
-        $("#about").css("display", "none");
-        $("#dashBoardContent").css("display", "none");
-        $("#services").css("display", "none");
-    });
 
 </script>
 

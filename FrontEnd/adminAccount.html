@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin Account</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/css/all.min.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #adminImg {
+            width: 100vw;
+            height: 100vh;
+            background: url("assets/images/car10.jpg");
+            background-size: 100% 100%;
+        }
+        #side_bar{
+            background: white !important;
+            width: 240px;
+            height: 100%;
+            position: fixed;
+            /*transition: all 0.4s;*/
+            opacity: 75%;
+        }
+        #adminDash{
+            /*background: white !important;*/
+            width: 1025px;
+            height: 100%;
+            left: 240px;
+            position: fixed;
+            border: 1px solid red;
+            /*transition: all 0.4s;*/
+            opacity: 75%;
+        }
+
+        #t1{
+            position: absolute;
+            margin: auto;
+            font-weight: bold;
+            top: 190px;
+            left: 150px;
+            font-family: Quicksand;
+            font-size: 100px;
+        }
+    </style>
 </head>
 <body>
-
+<section class="container-fluid" id="adminPage">
+    <div id="adminImg">
+        <nav id="side_bar">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkCarManage" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-car-side" style="color: #04414d"></i>  Manage Car</a>
+                </li>
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkDriver" class="nav-link text-dark" href="#"><i class="fas fa-solid fa-users" style="color: #04414d"></i>  Manage Driver</a>
+                </li>
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkCustomer" class="nav-link text-dark" href="#" ><i class="fas fa-user-cog" style="color: #04414d"></i>  Manage Customer</a>
+                </li>
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkPayment" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-credit-card" style="color: #04414d"></i>  Manage Payment</a>
+                </li>
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkMaintenance" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-screwdriver" style="color: #04414d"></i>  Manage Maintenance</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="adminDash">
+            <a class="nav-link text-white" id="t1">W e l c o m e  !</a>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
