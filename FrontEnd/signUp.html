@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sing Up</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/css/all.min.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <style>
+        #signUpBody{
+            width: 100vm;
+            height: 100vh;
+            background-size: 100%;
+            background-size: 100%;
+            overflow: hidden;
+            background-color: #c9c4ff;
+        }
+        #signUp{
+            width: 65%;
+            height: 90%;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 5%;
+            border-radius: 10px ;
+            background-color: white;
+        }
+        #signUpDiv{
+            width: 280px;
+            height: 98%;
+            position: absolute;
+            margin: auto;
+            left: 65%;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 10px ;
+            background-color:#04414d;
+        }
+        #signUpText01{
+            font-weight: bold;
+            color: #04414d;
+            font-size: 30px;
+            font-family: "Arial Rounded MT Bold";
+            position: absolute;
+            margin: auto;
+            left: 10px;
+            right: 0;
+            top: 20px;
+            bottom: 0;
+        }
+        #signUpText{
+            font-weight: bold;
+            color: white;
+            font-size: 45px;
+            font-family:  "Baskerville Old Face";
+            position: absolute;
+            margin: auto;
+            left: 30px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        #signUp_btn{
+            position: relative;
+            margin: auto;
+            left: 22%;
+            right: 0;
+            top: 90%;
+            bottom: 0;
+        }
+        #signUpForm{
+            position: relative;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 100px;
+            bottom: 0;
+        }
+        #Back{
+            position: relative;
+            margin: auto;
+            left: 1150px;
+            right: 0;
+            top: 10px;
+            bottom: 0;
+        }
+        #sec1{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 8%;
+        }
+        #sec2{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 37%;
+        }
+    </style>
+</head>
+<body>
+<section id="signUpBody">
+    <section id="signUp">
+        <h1 id="signUpText01">SIGN UP</h1>
+        <form id="signUpForm">
+            <section id="sec1" class="col-3">
+                <div class="mb-sm-0">
+                    <label class="form-label" for="customerId">Customer Id</label>
+                    <input class="form-control" id="customerId" name="customerId" placeholder="Customer Id"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="customerAddress">Customer Address</label>
+                    <input class="form-control" id="customerAddress" name="customerAddress" placeholder="Customer Address"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" id="password" name="password" placeholder="Password"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="nic">NIC</label>
+                    <input class="form-control" id="nic" name="nic" placeholder="NIC"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="licenseNo">License No</label>
+                    <input class="form-control" id="licenseNo" name="licenseNo" placeholder="License No"
+                           type="text">
+                </div>
+            </section>
+            <section id="sec2" class="col-3">
+                <div class="mb-sm-0">
+                    <label class="form-label" for="customerName">Customer Name </label>
+                    <input class="form-control" id="customerName" name="customerName" placeholder="Customer Name"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" id="email" name="email" placeholder="Email"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="contactNo">Contact No</label>
+                    <input class="form-control" id="contactNo" name="contactNo" placeholder="Contact No"
+                           type="text">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="nicImage">NIC Image</label>
+                    <input class="form-control" id="nicImage" name="nicImage" placeholder="NIC Image"
+                           type="file">
+                </div>
+                <div class="mb-sm-0">
+                    <label class="form-label" for="licenseImage">License Image</label>
+                    <input class="form-control" id="licenseImage" name="licenseImage" placeholder="License Image"
+                           type="file">
+                </div>
+            </section>
+        </form>
+        <button id="signUp_btn" type="submit" class="btn btn-primary col-3">Sing Up</button>
+        <div id="signUpDiv">
+            <h1 id="signUpText">Welcome</h1>
+        </div>
+    </section>
+    <a class=" btn btn-outline-danger col-1 mt-3" href="index.html" id="Back">LogOut</a>
+</section>
+<script src="assets/boostrap/js/bootstrap.bundle.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+</body>
+</html>

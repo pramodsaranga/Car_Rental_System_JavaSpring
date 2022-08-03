@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login Form</title>
+    <title>Sign UP</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/fonts/css/all.min.css" rel="stylesheet">
     <link href="assets/styles/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <style>
-        #logBody{
+        #signBody{
             width: 100vm;
             height: 100vh;
             background-size: 100%;
@@ -17,7 +17,7 @@
             overflow: hidden;
             background-color: #c9c4ff;
         }
-        #log{
+        #sign{
             width: 600px;
             height: 500px;
             position: absolute;
@@ -29,7 +29,7 @@
             border-radius: 10px ;
             background-color: white;
         }
-        #logDiv{
+        #signDiv{
             width: 280px;
             height: 490px;
             position: absolute;
@@ -41,7 +41,7 @@
             border-radius: 10px ;
             background-color:#04414d;
         }
-        #text01{
+        #signText01{
             font-weight: bold;
             color: #04414d;
             font-size: 30px;
@@ -53,7 +53,7 @@
             top: 20px;
             bottom: 0;
         }
-        #text{
+        #signText{
             font-weight: bold;
             color: white;
             font-size: 45px;
@@ -65,7 +65,7 @@
             top: 0;
             bottom: 0;
         }
-        #log_btn{
+        #sign_btn{
             position: relative;
             margin: auto;
             left: 80px;
@@ -73,7 +73,7 @@
             top: 50px;
             bottom: 0;
         }
-        #logForm{
+        #signForm{
             position: relative;
             margin: auto;
             left: 0;
@@ -92,10 +92,10 @@
     </style>
 </head>
 <body>
-<section id="logBody">
-    <section id="log">
-        <h1 id="text01">Login Form</h1>
-        <form id="logForm">
+<section id="signBody">
+    <section id="sign">
+        <h1 id="signText01">SIGN IN</h1>
+        <form id="signForm">
             <div class="mb-3 col-6">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -105,16 +105,15 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <button id="log_btn" type="submit" class="btn btn-primary col-4">Login</button>
+            <button id="sign_btn" type="submit" class="btn btn-primary col-4">Sing In</button>
         </form>
-        <div id="logDiv">
-            <h1 id="text">Welcome</h1>
+        <div id="signDiv">
+            <h1 id="signText">Welcome</h1>
         </div>
     </section>
     <a class=" btn btn-outline-danger col-1 mt-3" href="index.html" id="Back">LogOut</a>
 </section>
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
-
 </body>
 </html>

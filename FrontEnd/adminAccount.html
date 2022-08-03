@@ -147,6 +147,27 @@
             left: 1%;
         }
 
+        /*mange Customer*/
+        #manageCustomer{
+            position: absolute;
+            width: 83vw;
+            height: 100vh;
+            right: 0;
+            top: 0;
+            left: 19vw;
+            background: #5c636a !important;
+            opacity: 85%;
+        }
+        #manege_cus_text{
+            position: relative;
+            margin: auto;
+            left: 10px;
+            font-weight: bold;
+            font-family: Quicksand;
+            font-size: 60px;
+            color: #04414d;
+        }
+
 
     </style>
 </head>
@@ -177,11 +198,114 @@
         </div>
     </div>
 </section>
-<!----------------------Manege Car Table----------------->
-<!--<section class="container-fluid" id="ManageTableCar">-->
-<!--    <div id="manageCarTableContent">-->
-<!--        <a id="manege_text1">Manage Car</a>-->
-<!--        <div class="col">-->
+
+<!----------------------Manege Car Details----------------->
+
+<!--<section class="container-fluid" id="manageCar">-->
+<!--    <div id="manageCarContent">-->
+<!--        <section class="container-fluid">-->
+<!--            <h1 id="manege_text2" class="fw-bold">Manage Car</h1>-->
+<!--        </section>-->
+<!--        <section class="container-fluid mt-3" >-->
+<!--            <div class="row mt-3">-->
+<!--                <div class="col-4">-->
+<!--                    <form id="carForm">-->
+<!--                        <section id="sec1Car">-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="carNumber">Car Number</label>-->
+<!--                                <input class="form-control" id="carNumber" name="carNumber" placeholder="Car Number"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="transmission">Transmission</label>-->
+<!--                                <input class="form-control" id="transmission" name="transmission" placeholder="Transmission"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="freeKmForDay">Free Km For Day</label>-->
+<!--                                <input class="form-control" id="freeKmForDay" name="freeKmForDay" placeholder="Free Km For Day"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="color">Color</label>-->
+<!--                                <input class="form-control" id="color" name="color" placeholder="Color"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                        <section id="sec2Car">-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="brand">Brand</label>-->
+<!--                                <input class="form-control" id="brand" name="brand" placeholder="Brand"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="fuel">Fuel</label>-->
+<!--                                <input class="form-control" id="fuel" name="fuel" placeholder="Fuel"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="freeKmForMonth">Free Km For Month</label>-->
+<!--                                <input class="form-control" id="freeKmForMonth" name="freeKmForMonth" placeholder="Free Km For Month"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="file">File</label>-->
+<!--                                <input class="form-control" id="file" name="file" placeholder="File"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                        <section id="sec3Car">-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="type">Type</label>-->
+<!--                                <input class="form-control" id="type" name="type" placeholder="Type"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="dailyRate">Daily Rate</label>-->
+<!--                                <input class="form-control" id="dailyRate" name="dailyRate" placeholder="Daily Rate"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="pricePerExtraKm">Price Per Extra Km</label>-->
+<!--                                <input class="form-control" id="pricePerExtraKm" name="pricePerExtraKm" placeholder="Price Per Extra Km"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="carQuantity">Car Quantity</label>-->
+<!--                                <input class="form-control" id="carQuantity" name="carQuantity" placeholder="Car Quantity"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                        <section id="sec4Car">-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="passengers">Passengers</label>-->
+<!--                                <input class="form-control" id="passengers" name="passengers" placeholder="Passengers"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="monthlyRate">Monthly Rate</label>-->
+<!--                                <input class="form-control" id="monthlyRate" name="monthlyRate" placeholder="Monthly Rate"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="mb-sm-0">-->
+<!--                                <label class="form-label fw-bold text-black" for="regNumber">Reg Number</label>-->
+<!--                                <input class="form-control" id="regNumber" name="regNumber" placeholder="Reg Number"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="row-cols-12">-->
+<!--                                <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>-->
+<!--                                <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>-->
+<!--                                <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>-->
+<!--                            </div>-->
+<!--                        </section>-->
+
+<!--                    </form>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </section>-->
+<!--        <div id="manageCarTableContent" class="col">-->
 <!--            <table class="table table-bordered table-hover" id="car_Table">-->
 <!--                <thead class="bg-white text-black">-->
 <!--                <tr>-->
@@ -219,158 +343,7 @@
 <!--            </table>-->
 <!--        </div>-->
 <!--    </div>-->
-<!--    <div class="row-cols-2">-->
-<!--        <button type="button" class="btn btn-success" id="CarDetails_btn" href="#">Manage Car Details</button>-->
-<!--    </div>-->
 <!--</section>-->
-
-<!----------------------Manege Car Details----------------->
-
-<section class="container-fluid" id="manageCar">
-    <div id="manageCarContent">
-        <section class="container-fluid">
-            <h1 id="manege_text2" class="fw-bold">Manage Car</h1>
-        </section>
-        <section class="container-fluid mt-3" >
-            <div class="row mt-3">
-                <div class="col-4">
-                    <form id="carForm">
-                        <section id="sec1Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="carNumber">Car Number</label>
-                                <input class="form-control" id="carNumber" name="carNumber" placeholder="Car Number"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="transmission">Transmission</label>
-                                <input class="form-control" id="transmission" name="transmission" placeholder="Transmission"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="freeKmForDay">Free Km For Day</label>
-                                <input class="form-control" id="freeKmForDay" name="freeKmForDay" placeholder="Free Km For Day"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="color">Color</label>
-                                <input class="form-control" id="color" name="color" placeholder="Color"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec2Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="brand">Brand</label>
-                                <input class="form-control" id="brand" name="brand" placeholder="Brand"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="fuel">Fuel</label>
-                                <input class="form-control" id="fuel" name="fuel" placeholder="Fuel"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="freeKmForMonth">Free Km For Month</label>
-                                <input class="form-control" id="freeKmForMonth" name="freeKmForMonth" placeholder="Free Km For Month"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="file">File</label>
-                                <input class="form-control" id="file" name="file" placeholder="File"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec3Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="type">Type</label>
-                                <input class="form-control" id="type" name="type" placeholder="Type"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="dailyRate">Daily Rate</label>
-                                <input class="form-control" id="dailyRate" name="dailyRate" placeholder="Daily Rate"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="pricePerExtraKm">Price Per Extra Km</label>
-                                <input class="form-control" id="pricePerExtraKm" name="pricePerExtraKm" placeholder="Price Per Extra Km"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="carQuantity">Car Quantity</label>
-                                <input class="form-control" id="carQuantity" name="carQuantity" placeholder="Car Quantity"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec4Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="passengers">Passengers</label>
-                                <input class="form-control" id="passengers" name="passengers" placeholder="Passengers"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="monthlyRate">Monthly Rate</label>
-                                <input class="form-control" id="monthlyRate" name="monthlyRate" placeholder="Monthly Rate"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="regNumber">Reg Number</label>
-                                <input class="form-control" id="regNumber" name="regNumber" placeholder="Reg Number"
-                                       type="text">
-                            </div>
-                            <div class="row-cols-12">
-                                <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>
-                                <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>
-                                <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>
-                            </div>
-                        </section>
-
-                    </form>
-                </div>
-
-            </div>
-
-        </section>
-        <div id="manageCarTableContent" class="col">
-            <table class="table table-bordered table-hover" id="car_Table">
-                <thead class="bg-white text-black">
-                <tr>
-                    <th>Car Number</th>
-                    <th>Brand</th>
-                    <th>Type</th>
-                    <th>passengers</th>
-                    <th>Transmission</th>
-                    <th>Fuel</th>
-                    <th>Daily Rate</th>
-                    <th>Monthly Rate</th>
-                    <th>Free Km For day</th>
-                    <th>Free Km For Month</th>
-                    <th>Price Pre Extra KM</th>
-                    <th>Reg Number</th>
-                    <th>Color</th>
-                    <th>File</th>
-                    <th>Car Quantity</th>
-                </tr>
-                </thead>
-                <tbody id="tblCarJson">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-
-            </table>
-        </div>
-
-    </div>
-
-</section>
 <!----------------------Manege Driver----------------->
 
 <!--<section class="container-fluid" id="manageDriver">-->
@@ -488,6 +461,46 @@
 <!--</section>-->
 
 <!----------------------Manege Customer----------------->
+<!--<section class="container-fluid" id="manageCustomer">-->
+<!--    <section class="container-fluid">-->
+<!--        <h1 id="manege_cus_text" class="fw-bold">Manage Car</h1>-->
+<!--    </section>-->
+<!--    <div id="manageCusTable">-->
+<!--        <div class="col-11 mx-3 mt-3">-->
+<!--            <table class="table table-bordered table-hover">-->
+<!--                <thead class="bg-white text-black">-->
+<!--                <tr>-->
+<!--                    <th>Customer Id</th>-->
+<!--                    <th>CustomerName</th>-->
+<!--                    <th>Customer Address</th>-->
+<!--                    <th>Email</th>-->
+<!--                    <th>Password</th>-->
+<!--                    <th>NIC</th>-->
+<!--                    <th>NICImage</th>-->
+<!--                    <th>License No</th>-->
+<!--                    <th>License Image</th>-->
+<!--                    <th>Contact No</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="tblCustomerJson">-->
+<!--                <tr>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+<!--                    <td></td>-->
+
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 </body>
 </html>

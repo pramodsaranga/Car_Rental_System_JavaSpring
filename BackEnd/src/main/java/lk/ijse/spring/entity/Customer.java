@@ -15,15 +15,16 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
     @Id
+    private String customerId;
+    private String customerName;
+    private String customerAddress;
     private String email;
     private String password;
+    private int contactNo;
     private String nic;
     private String nicImage;
-    private String dlicense;
-    private String dlicenseImage;
-    private String address;
-    private int contactNo;
-    private String cusStatus;
+    private String licenseNo;
+    private String licenseImage;
 
 
 }
