@@ -168,6 +168,14 @@
             color: #04414d;
         }
 
+        #logOut_btn{
+            position: relative;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 44%;
+            bottom: 0;
+        }
 
     </style>
 </head>
@@ -177,13 +185,13 @@
         <nav id="side_bar">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item btn btn-outline-primary col-12">
-                    <a id="linkCarManage" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-car-side" style="color: #04414d"></i>  Manage Car</a>
+                    <a id="linkManageCar" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-car-side" style="color: #04414d"></i>  Manage Car</a>
                 </li>
                 <li class="nav-item btn btn-outline-primary col-12">
-                    <a id="linkDriver" class="nav-link text-dark" href="#"><i class="fas fa-solid fa-users" style="color: #04414d"></i>  Manage Driver</a>
+                    <a id="linkManageDriver" class="nav-link text-dark" href="#"><i class="fas fa-solid fa-users" style="color: #04414d"></i>  Manage Driver</a>
                 </li>
                 <li class="nav-item btn btn-outline-primary col-12">
-                    <a id="linkCustomer" class="nav-link text-dark" href="#" ><i class="fas fa-user-cog" style="color: #04414d"></i>  Manage Customer</a>
+                    <a id="linkManageCustomer" class="nav-link text-dark" href="#" ><i class="fas fa-user-cog" style="color: #04414d"></i>  Manage Customer</a>
                 </li>
                 <li class="nav-item btn btn-outline-primary col-12">
                     <a id="linkPayment" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-credit-card" style="color: #04414d"></i>  Manage Payment</a>
@@ -192,6 +200,9 @@
                     <a id="linkMaintenance" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-screwdriver" style="color: #04414d"></i>  Manage Maintenance</a>
                 </li>
             </ul>
+            <div class="nav-item btn btn-danger col-12" id="logOut_btn">
+                <a id="linkLogOut" class="nav-link text-white" href="index.html" style="color: #ff0e4a"><i class="fas "></i>Log Out</a>
+            </div>
         </nav>
         <div id="adminDash">
             <a class="nav-link text-white" id="t1">W e l c o m e  !</a>
@@ -201,306 +212,350 @@
 
 <!----------------------Manege Car Details----------------->
 
-<!--<section class="container-fluid" id="manageCar">-->
-<!--    <div id="manageCarContent">-->
-<!--        <section class="container-fluid">-->
-<!--            <h1 id="manege_text2" class="fw-bold">Manage Car</h1>-->
-<!--        </section>-->
-<!--        <section class="container-fluid mt-3" >-->
-<!--            <div class="row mt-3">-->
-<!--                <div class="col-4">-->
-<!--                    <form id="carForm">-->
-<!--                        <section id="sec1Car">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="carNumber">Car Number</label>-->
-<!--                                <input class="form-control" id="carNumber" name="carNumber" placeholder="Car Number"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="transmission">Transmission</label>-->
-<!--                                <input class="form-control" id="transmission" name="transmission" placeholder="Transmission"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="freeKmForDay">Free Km For Day</label>-->
-<!--                                <input class="form-control" id="freeKmForDay" name="freeKmForDay" placeholder="Free Km For Day"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="color">Color</label>-->
-<!--                                <input class="form-control" id="color" name="color" placeholder="Color"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="sec2Car">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="brand">Brand</label>-->
-<!--                                <input class="form-control" id="brand" name="brand" placeholder="Brand"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="fuel">Fuel</label>-->
-<!--                                <input class="form-control" id="fuel" name="fuel" placeholder="Fuel"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="freeKmForMonth">Free Km For Month</label>-->
-<!--                                <input class="form-control" id="freeKmForMonth" name="freeKmForMonth" placeholder="Free Km For Month"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="file">File</label>-->
-<!--                                <input class="form-control" id="file" name="file" placeholder="File"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="sec3Car">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="type">Type</label>-->
-<!--                                <input class="form-control" id="type" name="type" placeholder="Type"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="dailyRate">Daily Rate</label>-->
-<!--                                <input class="form-control" id="dailyRate" name="dailyRate" placeholder="Daily Rate"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="pricePerExtraKm">Price Per Extra Km</label>-->
-<!--                                <input class="form-control" id="pricePerExtraKm" name="pricePerExtraKm" placeholder="Price Per Extra Km"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="carQuantity">Car Quantity</label>-->
-<!--                                <input class="form-control" id="carQuantity" name="carQuantity" placeholder="Car Quantity"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="sec4Car">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="passengers">Passengers</label>-->
-<!--                                <input class="form-control" id="passengers" name="passengers" placeholder="Passengers"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="monthlyRate">Monthly Rate</label>-->
-<!--                                <input class="form-control" id="monthlyRate" name="monthlyRate" placeholder="Monthly Rate"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="regNumber">Reg Number</label>-->
-<!--                                <input class="form-control" id="regNumber" name="regNumber" placeholder="Reg Number"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="row-cols-12">-->
-<!--                                <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>-->
-<!--                                <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>-->
-<!--                                <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>-->
-<!--                            </div>-->
-<!--                        </section>-->
+<section class="container-fluid" id="manageCar">
+    <div id="manageCarContent">
+        <section class="container-fluid">
+            <h1 id="manege_text2" class="fw-bold">Manage Car</h1>
+        </section>
+        <section class="container-fluid mt-3" >
+            <div class="row mt-3">
+                <div class="col-4">
+                    <form id="carForm">
+                        <section id="sec1Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="carNumber">Car Number</label>
+                                <input class="form-control" id="carNumber" name="carNumber" placeholder="Car Number"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="transmission">Transmission</label>
+                                <input class="form-control" id="transmission" name="transmission" placeholder="Transmission"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="freeKmForDay">Free Km For Day</label>
+                                <input class="form-control" id="freeKmForDay" name="freeKmForDay" placeholder="Free Km For Day"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="color">Color</label>
+                                <input class="form-control" id="color" name="color" placeholder="Color"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec2Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="brand">Brand</label>
+                                <input class="form-control" id="brand" name="brand" placeholder="Brand"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="fuel">Fuel</label>
+                                <input class="form-control" id="fuel" name="fuel" placeholder="Fuel"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="freeKmForMonth">Free Km For Month</label>
+                                <input class="form-control" id="freeKmForMonth" name="freeKmForMonth" placeholder="Free Km For Month"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="file">File</label>
+                                <input class="form-control" id="file" name="file" placeholder="File"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec3Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="type">Type</label>
+                                <input class="form-control" id="type" name="type" placeholder="Type"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="dailyRate">Daily Rate</label>
+                                <input class="form-control" id="dailyRate" name="dailyRate" placeholder="Daily Rate"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="pricePerExtraKm">Price Per Extra Km</label>
+                                <input class="form-control" id="pricePerExtraKm" name="pricePerExtraKm" placeholder="Price Per Extra Km"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="carQuantity">Car Quantity</label>
+                                <input class="form-control" id="carQuantity" name="carQuantity" placeholder="Car Quantity"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec4Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="passengers">Passengers</label>
+                                <input class="form-control" id="passengers" name="passengers" placeholder="Passengers"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="monthlyRate">Monthly Rate</label>
+                                <input class="form-control" id="monthlyRate" name="monthlyRate" placeholder="Monthly Rate"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="regNumber">Reg Number</label>
+                                <input class="form-control" id="regNumber" name="regNumber" placeholder="Reg Number"
+                                       type="text">
+                            </div>
+                            <div class="row-cols-12">
+                                <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>
+                                <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>
+                                <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>
+                            </div>
+                        </section>
 
-<!--                    </form>-->
-<!--                </div>-->
+                    </form>
+                </div>
 
-<!--            </div>-->
+            </div>
 
-<!--        </section>-->
-<!--        <div id="manageCarTableContent" class="col">-->
-<!--            <table class="table table-bordered table-hover" id="car_Table">-->
-<!--                <thead class="bg-white text-black">-->
-<!--                <tr>-->
-<!--                    <th>Car Number</th>-->
-<!--                    <th>Brand</th>-->
-<!--                    <th>Type</th>-->
-<!--                    <th>passengers</th>-->
-<!--                    <th>Transmission</th>-->
-<!--                    <th>Fuel</th>-->
-<!--                    <th>Daily Rate</th>-->
-<!--                    <th>Monthly Rate</th>-->
-<!--                    <th>Free Km For day</th>-->
-<!--                    <th>Free Km For Month</th>-->
-<!--                    <th>Price Pre Extra KM</th>-->
-<!--                    <th>Reg Number</th>-->
-<!--                    <th>Color</th>-->
-<!--                    <th>File</th>-->
-<!--                    <th>Car Quantity</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody id="tblCarJson">-->
-<!--                <tr>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                </tr>-->
-<!--                </tbody>-->
+        </section>
+        <div id="manageCarTableContent" class="col">
+            <table class="table table-bordered table-hover" id="car_Table">
+                <thead class="bg-white text-black">
+                <tr>
+                    <th>Car Number</th>
+                    <th>Brand</th>
+                    <th>Type</th>
+                    <th>passengers</th>
+                    <th>Transmission</th>
+                    <th>Fuel</th>
+                    <th>Daily Rate</th>
+                    <th>Monthly Rate</th>
+                    <th>Free Km For day</th>
+                    <th>Free Km For Month</th>
+                    <th>Price Pre Extra KM</th>
+                    <th>Reg Number</th>
+                    <th>Color</th>
+                    <th>File</th>
+                    <th>Car Quantity</th>
+                </tr>
+                </thead>
+                <tbody id="tblCarJson">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
 
-<!--            </table>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+            </table>
+        </div>
+    </div>
+</section>
 <!----------------------Manege Driver----------------->
 
-<!--<section class="container-fluid" id="manageDriver">-->
-<!--    <div id="manageDriverContent">-->
-<!--        <section class="container-fluid">-->
-<!--            <a class="fw-bold" id="manege_driver_text">Manage Driver</a>-->
-<!--        </section>-->
-<!--        <section class="container-fluid mt-3" >-->
-<!--            <div class="row mt-3">-->
-<!--                <div class="col-4">-->
-<!--                    <form id="driverForm">-->
-<!--                        <section id="sec1Driver">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverId">Driver Id</label>-->
-<!--                                <input class="form-control" id="driverId" name="driverId" placeholder="Driver Id"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverNic">Driver Nic</label>-->
-<!--                                <input class="form-control" id="driverNic" name="driverNic" placeholder="Driver Nic"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverAge">Driver Age</label>-->
-<!--                                <input class="form-control" id="driverAge" name="driverAge" placeholder="Driver Age"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="sec2Driver">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverName">Driver Name</label>-->
-<!--                                <input class="form-control" id="driverName" name="driverName" placeholder="Driver Name"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverLicense">Driver License</label>-->
-<!--                                <input class="form-control" id="driverLicense" name="driverLicense" placeholder="Driver License"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverGender">Driver Gender</label>-->
-<!--                                <input class="form-control" id="driverGender" name="driverGender" placeholder="Driver Gender"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="sec3Driver">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverEmail">Driver Email</label>-->
-<!--                                <input class="form-control" id="driverEmail" name="driverEmail" placeholder="Driver Email"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverAddress">Driver Address</label>-->
-<!--                                <input class="form-control"  id="driverAddress"  name="driverAddress" placeholder="Driver Address"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
+<section class="container-fluid" id="manageDriver">
+    <div id="manageDriverContent">
+        <section class="container-fluid">
+            <a class="fw-bold" id="manege_driver_text">Manage Driver</a>
+        </section>
+        <section class="container-fluid mt-3" >
+            <div class="row mt-3">
+                <div class="col-4">
+                    <form id="driverForm">
+                        <section id="sec1Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverId">Driver Id</label>
+                                <input class="form-control" id="driverId" name="driverId" placeholder="Driver Id"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverNic">Driver Nic</label>
+                                <input class="form-control" id="driverNic" name="driverNic" placeholder="Driver Nic"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverAge">Driver Age</label>
+                                <input class="form-control" id="driverAge" name="driverAge" placeholder="Driver Age"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec2Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverName">Driver Name</label>
+                                <input class="form-control" id="driverName" name="driverName" placeholder="Driver Name"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverLicense">Driver License</label>
+                                <input class="form-control" id="driverLicense" name="driverLicense" placeholder="Driver License"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverGender">Driver Gender</label>
+                                <input class="form-control" id="driverGender" name="driverGender" placeholder="Driver Gender"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec3Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverEmail">Driver Email</label>
+                                <input class="form-control" id="driverEmail" name="driverEmail" placeholder="Driver Email"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverAddress">Driver Address</label>
+                                <input class="form-control"  id="driverAddress"  name="driverAddress" placeholder="Driver Address"
+                                       type="text">
+                            </div>
 
-<!--                        </section>-->
-<!--                        <section id="sec4Driver">-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="driverPassword">Driver Password</label>-->
-<!--                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Driver Password"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="mb-sm-0">-->
-<!--                                <label class="form-label fw-bold text-black" for="availability">Driver ContactNo</label>-->
-<!--                                <input class="form-control" id="availability" name="availability" placeholder="Driver ContactNo"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="row-cols-4">-->
-<!--                                <button type="button" class="btn btn-success col-3 mt-3" id="addDriver_btn">Save</button>-->
-<!--                                <button type="button" class="btn btn-primary col-4 mt-3 mx-2" id="updateDriver_btn">Update</button>-->
-<!--                                <button type="button" class="btn btn-danger col-3 mt-3" id="deleteDriver_btn">Delete</button>-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--                <div id="manageDriverTable">-->
-<!--                    <div class="col-12">-->
-<!--                        <table class="table table-bordered table-hover">-->
-<!--                            <thead class="bg-white text-black">-->
-<!--                            <tr>-->
-<!--                                <th>Driver Id</th>-->
-<!--                                <th>Driver Name</th>-->
-<!--                                <th>Driver Email</th>-->
-<!--                                <th>Driver Password</th>-->
-<!--                                <th>Driver Nic</th>-->
-<!--                                <th>Driver License</th>-->
-<!--                                <th>Driver Address</th>-->
-<!--                                <th>Driver Contact No</th>-->
-<!--                                <th>Driver Age</th>-->
-<!--                                <th>Driver Gender</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody id="tblDriverJson">-->
-<!--                            <tr>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                            </tr>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
-<!--    </div>-->
-<!--</section>-->
+                        </section>
+                        <section id="sec4Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverPassword">Driver Password</label>
+                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Driver Password"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="availability">Driver ContactNo</label>
+                                <input class="form-control" id="availability" name="availability" placeholder="Driver ContactNo"
+                                       type="text">
+                            </div>
+                            <div class="row-cols-4">
+                                <button type="button" class="btn btn-success col-3 mt-3" id="addDriver_btn">Save</button>
+                                <button type="button" class="btn btn-primary col-4 mt-3 mx-2" id="updateDriver_btn">Update</button>
+                                <button type="button" class="btn btn-danger col-3 mt-3" id="deleteDriver_btn">Delete</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+                <div id="manageDriverTable">
+                    <div class="col-12">
+                        <table class="table table-bordered table-hover">
+                            <thead class="bg-white text-black">
+                            <tr>
+                                <th>Driver Id</th>
+                                <th>Driver Name</th>
+                                <th>Driver Email</th>
+                                <th>Driver Password</th>
+                                <th>Driver Nic</th>
+                                <th>Driver License</th>
+                                <th>Driver Address</th>
+                                <th>Driver Contact No</th>
+                                <th>Driver Age</th>
+                                <th>Driver Gender</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tblDriverJson">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 
 <!----------------------Manege Customer----------------->
-<!--<section class="container-fluid" id="manageCustomer">-->
-<!--    <section class="container-fluid">-->
-<!--        <h1 id="manege_cus_text" class="fw-bold">Manage Car</h1>-->
-<!--    </section>-->
-<!--    <div id="manageCusTable">-->
-<!--        <div class="col-11 mx-3 mt-3">-->
-<!--            <table class="table table-bordered table-hover">-->
-<!--                <thead class="bg-white text-black">-->
-<!--                <tr>-->
-<!--                    <th>Customer Id</th>-->
-<!--                    <th>CustomerName</th>-->
-<!--                    <th>Customer Address</th>-->
-<!--                    <th>Email</th>-->
-<!--                    <th>Password</th>-->
-<!--                    <th>NIC</th>-->
-<!--                    <th>NICImage</th>-->
-<!--                    <th>License No</th>-->
-<!--                    <th>License Image</th>-->
-<!--                    <th>Contact No</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody id="tblCustomerJson">-->
-<!--                <tr>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
-<!--                    <td></td>-->
+<section class="container-fluid" id="manageCustomer">
+    <section class="container-fluid">
+        <h1 id="manege_cus_text" class="fw-bold">Manage Customer</h1>
+    </section>
+    <div id="manageCusTable">
+        <div class="col-11 mx-3 mt-3">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-white text-black">
+                <tr>
+                    <th>Customer Id</th>
+                    <th>CustomerName</th>
+                    <th>Customer Address</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>NIC</th>
+                    <th>NICImage</th>
+                    <th>License No</th>
+                    <th>License Image</th>
+                    <th>Contact No</th>
+                </tr>
+                </thead>
+                <tbody id="tblCustomerJson">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
 
-<!--                </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 
+
+<script src="assets/boostrap/js/bootstrap.bundle.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    $("#adminPage").css("display", "block");
+    $("#manageCar").css("display", "none");
+    $("#manageDriver").css("display", "none");
+    $("#manageCustomer").css("display", "none");
+
+    $("#linkManageCar").click(function () {
+        $("#manageCar").css("display", "block");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+    });
+
+    $("#linkManageDriver").click(function () {
+        $("#manageDriver").css("display", "block");
+        $("#manageCar").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+    });
+
+    $("#linkManageCustomer").click(function () {
+        $("#manageCustomer").css("display", "block");
+        $("#manageDriver").css("display", "none");
+        $("#manageCar").css("display", "none");
+    });
+
+    $("#linkPayment").click(function () {
+        $("#adminPage").css("display", "block");
+        $("#manageCustomer").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCar").css("display", "none");
+    });
+
+    $("#linkMaintenance").click(function () {
+        $("#adminPage").css("display", "block");
+        $("#manageCustomer").css("display", "none");
+        $("#manageDriver").css("display", "none");
+        $("#manageCar").css("display", "none");
+    });
+
+
+
+</script>
 </body>
 </html>
