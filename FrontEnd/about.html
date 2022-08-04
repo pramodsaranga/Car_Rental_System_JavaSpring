@@ -29,32 +29,79 @@
             position: fixed;
             z-index: 1000;
         }
-        #main1{
-            width: 100vm;
-            height: 100vh;
-            background-size: 100%;
-            /*overflow: hidden;*/
-        }
         #about{
             width: 100vm;
             height: 2400px;
         }
-        #mainImg{
-            position: relative;
-            width: 68%;
-            height: 18%;
-            top: 1.5%;
-            right: 16%;
+        #main{
+            position: absolute;
+            width: 850px;
+            height: 460px;
+            left: 0;
+            right: 400px;
+            top: 65px;
+            bottom: 0;
             margin: auto;
             border-radius: 50px;
-            background: url("assets/images/trip.jpg");
-            background-size: 100% 100%;
+            overflow: hidden;
+            border: 5px solid #d7c6c6d6;
         }
-        #mainPic1{
+        #mainImg{
+            width: 400%;
+            height: 100%;
+            display: flex;
+            animation-name: slideme;
+            animation-duration: 8s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+        #photo1{
+            width: 100%;
+            background: url("assets/images/trip.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 50px;
+        }
+        #photo2{
+            width: 100%;
+            background: url("assets/images/happy.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 50px;
+        }
+        #photo3{
+            width: 100%;
+            background: url("assets/images/self.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 50px;
+        }
+        #photo4{
+            width: 100%;
+            background: url("assets/images/car07.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 50px;
+        }
+
+        @keyframes slideme {
+            0%,15%{
+                transform: translateX(0);
+            }
+            25%,40%{
+                transform: translateX(-25%);
+            }
+            50%,70%{
+                transform: translateX(-50%);
+            }
+            80%,100%{
+                transform: translateX(-75%);
+            }
+        }
+        #mainT1{
             position: relative;
             width: 380px;
             height: 400px;
-            bottom: 360px;
             left: 34%;
             margin: auto;
             /*border: 1px solid red;*/
@@ -62,6 +109,7 @@
         #m2 {
             position: relative;
             top: 2%;
+            color: black;
         }
     </style>
 </head>
@@ -104,8 +152,15 @@
 <!--------------------Service Content Start--------------------------->
 <section class="container-fluid" id="about">
     <h1 id="SText" class="text-center fw-bold" style="color:#2DABAB">Our Services</h1>
-    <div id="mainImg"></div>
-    <div id="mainPic1">
+    <section id="main">
+        <div id="mainImg">
+            <div id="photo1"></div>
+            <div id="photo2"></div>
+            <div id="photo3"></div>
+            <div id="photo4"></div>
+        </div>
+    </section>
+    <div id="mainT1">
         <a id="s1">
             CAR DETAILS
         </a>
