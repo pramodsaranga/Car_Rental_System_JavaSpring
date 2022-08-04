@@ -29,7 +29,40 @@
             position: fixed;
             z-index: 1000;
         }
-
+        #main1{
+            width: 100vm;
+            height: 100vh;
+            background-size: 100%;
+            /*overflow: hidden;*/
+        }
+        #about{
+            width: 100vm;
+            height: 2400px;
+        }
+        #mainImg{
+            position: relative;
+            width: 68%;
+            height: 18%;
+            top: 1.5%;
+            right: 16%;
+            margin: auto;
+            border-radius: 50px;
+            background: url("assets/images/trip.jpg");
+            background-size: 100% 100%;
+        }
+        #mainPic1{
+            position: relative;
+            width: 380px;
+            height: 400px;
+            bottom: 360px;
+            left: 34%;
+            margin: auto;
+            /*border: 1px solid red;*/
+        }
+        #m2 {
+            position: relative;
+            top: 2%;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +101,27 @@
         </div>
     </nav>
 </section>
+<!--------------------Service Content Start--------------------------->
+<section class="container-fluid" id="about">
+    <h1 id="SText" class="text-center fw-bold" style="color:#2DABAB">Our Services</h1>
+    <div id="mainImg"></div>
+    <div id="mainPic1">
+        <a id="s1">
+            CAR DETAILS
+        </a>
+        <a id="m2">
+            WELCOME TO RentalCar.COM
+            PREMIER CAR RENTAL SERVICES IN SRI LANKA
+            With over 10 years of experience in the industry, we strive to offer
+            the highest levels of customer service and a highly personalised service
+            to all our customers who are on the lookout for Sri Lanka car rental
+            opportunities. With one of the largest and most modern and varied fleets
+            in Sri Lanka, our service is backed by a networked front office,
+            fully-fledged mechanical servicing and valet servicing onsite.
+        </a>
+    </div>
+</section>
+
 
 </body>
 </html>
