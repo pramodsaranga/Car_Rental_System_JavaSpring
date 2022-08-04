@@ -9,6 +9,28 @@
     <link href="assets/styles/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <style>
+        .nav-item {
+            font-family:  "Quicksand";
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        .navigation:hover {
+            color: #1a1e21 !important;
+        }
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .navbar-collapse{
+            flex-grow: 0;
+        }
+        #NavContent{
+            height: fit-content;
+            position: fixed;
+            z-index: 1000;
+        }
+
+
         #signUpBody{
             width: 100vm;
             height: 100vh;
@@ -19,12 +41,12 @@
         }
         #signUp{
             width: 65%;
-            height: 90%;
+            height: 80%;
             position: absolute;
             margin: auto;
             left: 0;
             right: 0;
-            top: 0;
+            top: 17%;
             bottom: 5%;
             border-radius: 10px ;
             background-color: white;
@@ -68,10 +90,11 @@
         #signUp_btn{
             position: relative;
             margin: auto;
-            left: 22%;
+            left: 70%;
             right: 0;
-            top: 90%;
+            top: 80%;
             bottom: 0;
+            z-index: 100;
         }
         #signUpForm{
             position: relative;
@@ -79,14 +102,6 @@
             left: 0;
             right: 0;
             top: 100px;
-            bottom: 0;
-        }
-        #Back{
-            position: relative;
-            margin: auto;
-            left: 1150px;
-            right: 0;
-            top: 10px;
             bottom: 0;
         }
         #sec1{
@@ -104,6 +119,42 @@
     </style>
 </head>
 <body>
+<!--------------------Nav Content Start--------------------------->
+<section class="container-fluid" id="NavContent">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
+        <div class="container-fluid">
+            <h1 id="fold_1" style="color: white">Ren<span style="color:#2DABAB">talCar.com</span></h1>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-4 ">
+                    <li class="nav-item me-3">
+                        <a aria-current="page" class="nav-link active navigation" href="index.html" id="linkHome">Home</a>
+                    </li>
+                    <li class="nav-item me-3" >
+                        <a class="nav-link active navigation" href="services.html" id="linkServices">Services</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="about.html" id="linkAbout">About</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="carDetails.html" id="linkCarDetails">Car Details</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-primary mx-2" href="loginForm.html" id="Customer">Login</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-success mx-2" href="signUp.html" >Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<!--------------------SIGN UP Content Start--------------------------->
 <section id="signUpBody">
     <section id="signUp">
         <h1 id="signUpText01">SIGN UP</h1>
@@ -168,7 +219,6 @@
             <h1 id="signUpText">Welcome</h1>
         </div>
     </section>
-    <a class=" btn btn-outline-danger col-1 mt-3" href="index.html" id="Back">LogOut</a>
 </section>
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>

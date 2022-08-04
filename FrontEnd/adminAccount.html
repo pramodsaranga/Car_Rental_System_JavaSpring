@@ -12,11 +12,28 @@
         body{
             overflow: hidden;
         }
-
+        .nav-item {
+            font-family:  "Quicksand";
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        .navigation:hover {
+            color: #1a1e21 !important;
+        }
         .container-fluid {
             padding-left: 0;
             padding-right: 0;
         }
+        .navbar-collapse{
+            flex-grow: 0;
+        }
+        #NavContent{
+            height: fit-content;
+            position: fixed;
+            z-index: 1000;
+            border-bottom: 2px solid #04414d;
+        }
+
         #adminImg {
             width: 100vw;
             height: 100vh;
@@ -27,6 +44,7 @@
             background: white !important;
             width: 240px;
             height: 100%;
+            top: 15%;
             position: fixed;
             /*transition: all 0.4s;*/
             opacity: 75%;
@@ -77,15 +95,15 @@
         }
         #sec2Car{
             position: absolute;
-            left: 25%;
+            left: 24%;
         }
         #sec3Car{
             position: absolute;
-            left: 49%;
+            left: 46%;
         }
         #sec4Car{
             position: absolute;
-            left: 73%;
+            left: 68%;
         }
 
         #manageCarTableContent{
@@ -109,7 +127,7 @@
         #manageDriverContent{
             position: absolute;
             width: 83vw;
-            height: 100vh;
+            height: 100%;
             right: 0;
             top: 0;
             left: 19vw;
@@ -120,30 +138,36 @@
             position: relative;
             margin: auto;
             left: 10px;
+            top: 20%;
             font-weight: bold;
             font-family: Quicksand;
-            font-size: 60px;
+            font-size: 20px;
             color: #04414d;
         }
         #sec1Driver{
             position: absolute;
             left: 2%;
+            top: 23%;
         }
         #sec2Driver{
             position: absolute;
             left: 25%;
+            top: 23%;
         }
         #sec3Driver{
             position: absolute;
             left: 48%;
+            top: 23%;
         }
         #sec4Driver{
             position: absolute;
             left: 71%;
+            top: 23%;
         }
-        #manageDriverTable{
+
+        #tblDriver{
             position: absolute;
-            top: 60%;
+            top: 72%;
             left: 1%;
         }
 
@@ -180,6 +204,42 @@
     </style>
 </head>
 <body>
+<!--------------------Nav Content Start--------------------------->
+<section class="container-fluid" id="NavContent">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
+        <div class="container-fluid">
+            <h1 id="fold_1" style="color: white">Ren<span style="color:#2DABAB">talCar.com</span></h1>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-4 ">
+                    <li class="nav-item me-3">
+                        <a aria-current="page" class="nav-link active navigation" href="index.html" id="linkHome">Home</a>
+                    </li>
+                    <li class="nav-item me-3" >
+                        <a class="nav-link active navigation" href="services.html" id="linkServices">Services</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="about.html" id="linkAbout">About</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="carDetails.html" id="linkCarDetails">Car Details</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-primary mx-2" href="loginForm.html" id="Customer">Login</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-success mx-2" href="signUp.html" >Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<!--------------------Admin Page Content Start--------------------------->
 <section class="container-fluid" id="adminPage">
     <div id="adminImg">
         <nav id="side_bar">
@@ -307,6 +367,7 @@
                                 <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>
                                 <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>
                                 <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>
+                                <button type="button" class="btn btn-warning  mt-3" id="getAllCar_btn">Get All</button>
                             </div>
                         </section>
 
@@ -374,41 +435,41 @@
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverNic">Driver Nic</label>
-                                <input class="form-control" id="driverNic" name="driverNic" placeholder="Driver Nic"
+                                <input class="form-control" id="driverNic" name="nic" placeholder="Driver Nic"
                                        type="text">
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverAge">Driver Age</label>
-                                <input class="form-control" id="driverAge" name="driverAge" placeholder="Driver Age"
+                                <input class="form-control" id="driverAge" name="age" placeholder="Driver Age"
                                        type="text">
                             </div>
                         </section>
                         <section id="sec2Driver">
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverName">Driver Name</label>
-                                <input class="form-control" id="driverName" name="driverName" placeholder="Driver Name"
+                                <input class="form-control" id="driverName" name="name" placeholder="Driver Name"
                                        type="text">
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverLicense">Driver License</label>
-                                <input class="form-control" id="driverLicense" name="driverLicense" placeholder="Driver License"
+                                <input class="form-control" id="driverLicense" name="driverLicenseNo" placeholder="Driver License"
                                        type="text">
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverGender">Driver Gender</label>
-                                <input class="form-control" id="driverGender" name="driverGender" placeholder="Driver Gender"
+                                <input class="form-control" id="driverGender" name="gender" placeholder="Driver Gender"
                                        type="text">
                             </div>
                         </section>
                         <section id="sec3Driver">
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverEmail">Driver Email</label>
-                                <input class="form-control" id="driverEmail" name="driverEmail" placeholder="Driver Email"
+                                <input class="form-control" id="driverEmail" name="email" placeholder="Driver Email"
                                        type="text">
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverAddress">Driver Address</label>
-                                <input class="form-control"  id="driverAddress"  name="driverAddress" placeholder="Driver Address"
+                                <input class="form-control"  id="driverAddress"  name="address" placeholder="Driver Address"
                                        type="text">
                             </div>
 
@@ -416,23 +477,24 @@
                         <section id="sec4Driver">
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverPassword">Driver Password</label>
-                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Driver Password"
+                                <input class="form-control" id="driverPassword" name="password" placeholder="Driver Password"
                                        type="text">
                             </div>
                             <div class="mb-sm-0">
-                                <label class="form-label fw-bold text-black" for="availability">Driver ContactNo</label>
-                                <input class="form-control" id="availability" name="availability" placeholder="Driver ContactNo"
+                                <label class="form-label fw-bold text-black" for="driverContactNo">Driver ContactNo</label>
+                                <input class="form-control" id="driverContactNo" name="contact" placeholder="Driver ContactNo"
                                        type="text">
                             </div>
                             <div class="row-cols-4">
-                                <button type="button" class="btn btn-success col-3 mt-3" id="addDriver_btn">Save</button>
-                                <button type="button" class="btn btn-primary col-4 mt-3 mx-2" id="updateDriver_btn">Update</button>
-                                <button type="button" class="btn btn-danger col-3 mt-3" id="deleteDriver_btn">Delete</button>
+                                <button type="button" class="btn btn-success col-3 mt-3" id="btnSaveDriver">Save</button>
+                                <button type="button" class="btn btn-primary col-4 mt-3 mx-2" id="btnUpdateDriver">Update</button>
+                                <button type="button" class="btn btn-danger col-3 mt-3" id="btnDeleteDriver">Delete</button>
+                                <button type="button" class="btn btn-warning col-3 mt-3" id="btnGetAllDriver">Get All</button>
                             </div>
                         </section>
                     </form>
                 </div>
-                <div id="manageDriverTable">
+                <div id="tblDriver">
                     <div class="col-12">
                         <table class="table table-bordered table-hover">
                             <thead class="bg-white text-black">
@@ -449,7 +511,7 @@
                                 <th>Driver Gender</th>
                             </tr>
                             </thead>
-                            <tbody id="tblDriverJson">
+                            <tbody>
                             <tr>
                                 <td></td>
                                 <td></td>
@@ -513,7 +575,6 @@
     </div>
 </section>
 
-
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
@@ -554,6 +615,207 @@
         $("#manageCar").css("display", "none");
     });
 
+    $("#driverId").on("keypress", function (e) {
+        if (e.key == "Enter") {
+            searchDriver();
+        }
+    });
+
+    //Get All Driver Event
+    $("#btnGetAllDriver").click(function () {
+        loadAllDrivers();
+    });
+
+    $("#btnSaveDriver").click(function () {
+        saveDriver();
+    });
+
+    //Delete Driver Event
+    $("#btnDeleteDriver").click(function () {
+        deleteDriver();
+    });
+
+    //Update Driver Event
+    $("#btnUpdateDriver").click(function () {
+        updateDriver();
+    });
+
+    //Bind click events to the table rows
+    function bindClickEvents() {
+        $("#tblDriver>tr").click(function () {
+
+            let dr_id =$(this).children().eq(0).text();
+            let dr_name = $(this).children().eq(1).text();
+            let dr_address =$(this).children().eq(2).text();
+            let dr_age =$(this).children().eq(3).text();
+            let dr_contactNo =$(this).children().eq(4).text();
+            let dr_nic = $(this).children().eq(5).text();
+            let dr_gender =$(this).children().eq(6).text();
+            let dr_driver_license = $(this).children().eq(7).text();
+            let dr_email = $(this).children().eq(8).text();
+            let dr_password = $(this).children().eq(9).text();
+
+            //Set values to the text-fields
+            $("#driverId").val(dr_id);
+            $("#driverName").val(dr_name);
+            $("#driverAddress").val(dr_address);
+            $("#driverAge").val(dr_age);
+            $("#driverContactNo").val(dr_contactNo);
+            $("#driverGender").val(dr_gender);
+            $("#driverNic").val(dr_nic);
+            $("#driverLicense").val(dr_driver_license);
+            $("#driverEmail").val(dr_email);
+            $("#driverPassword").val(dr_password);
+        });
+    }
+
+
+    // Methods
+    loadAllDrivers();
+
+    //Save Customer
+    function saveDriver() {
+            var data = $("#driverForm").serialize(); // return query string of form with name:type-value
+            $.ajax({
+                url: "http://localhost:8080/BackEnd_war/api/v1/driver",
+                method: "POST",
+                data: data,// if we send data with the request
+                success: function (res) {
+                    if (res.code == 200) {
+                        alert("Successfully Driver Registered");
+                        loadAllDrivers();
+                        clearForm();
+                    }
+                },
+                error: function (ob) {
+                    alert(ob.message);
+                }
+            });
+    }
+
+
+    function loadAllDrivers() {
+        $("#tblDriver").empty();
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver",
+            method: "GET",
+            // dataType:"json", // please convert the response into JSON
+            success: function (resp) {
+
+                for (let i of resp.data) {
+                    var row = `<tr><td>${i.driverId}</td><td>${i.name}</td><td>${i.address}</td><td>${i.age}</td><td>${i.contact}</td><td>${i.gender}</td><td>${i.nic}</td><td>${i.drivingLicenseNo}</td><td>${i.email}</td><td>${i.password}</td></tr>`;
+                    $("#tblDriver").append(row);
+                }
+                bindClickEvents();
+                clearForm();
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Update Driver
+    function updateDriver() {
+        //creating a js object with relevant data which you  send to the server
+        var cusOb = {
+            driverId: $("#driverId").val(),
+            name:$("#driverName").val(),
+            address:$("#driverAddress").val(),
+            age:$("#driverAge").val(),
+            contact:$("#driverContactNo").val(),
+            gender:$("#driverGender").val(),
+            nic:$("#driverNic").val(),
+            drivingLicenseNo:$("#driverLicense").val(),
+            email:$("#driverEmail").val(),
+            password: $("#driverPassword").val()
+        }
+
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver" ,
+            method: "PUT",
+            contentType: "application/json", //You should state request's content type using MIME types
+            data: JSON.stringify(cusOb), // format js object to valid json string
+            success: function (res) {
+                if (res.code == 200) { // process is  ok
+                    alert("Successfully Updated");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Delete Customer
+    function deleteDriver() {
+        // Get the customer id
+        let driverId = $("#driverId").val();
+
+        // initiate the request
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver" + "?id=" + driverId,// viya query string
+            method: "DELETE",
+            //data:data,// application/x-www-form-urlencoded
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Customer Successfully Deleted");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Search Customer
+    function searchDriver() {
+        var driverId = $("#driverId").val();
+
+        $.ajax({
+            url:  "http://localhost:8080/BackEnd_war/api/v1/driver" + "/" + driverId,
+            method: "GET",
+            success: function (res) {
+                if (res.code = 200) {
+                    var driver = res.data;
+                    $("#driverId").val(driver.driverId);
+                    $("#driverName").val(driver.name);
+                    $("#driverAddress").val(driver.address);
+                    $("#driverAge").val(driver.age);
+                    $("#driverContactNo").val(driver.contact);
+                    $("#driverGender").val(driver.gender);
+                    $("#driverNic").val(driver.nic);
+                    $("#driverLicense").val(driver.drivingLicenseNo);
+                    $("#driverEmail").val(driver.email);
+                    $("#driverPassword").val(driver.password);
+                } else {
+                    clearForm();
+                }
+            },
+            error:function (ob){
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Clear Customer Input Fields
+    function clearForm() {
+        $("#driverId").focus();
+        $("#driverName").val();
+        $("#driverAddress").val();
+        $("#driverAge").val();
+        $("#driverContactNo").val();
+        $("#driverGender").val();
+        $("#driverNic").val();
+        $("#driverLicense").val();
+        $("#driverEmail").val();
+        $("#driverPassword").val();
+        $("#driverId").focus();
+    }
 
 
 </script>

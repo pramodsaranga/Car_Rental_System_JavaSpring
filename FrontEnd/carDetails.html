@@ -9,18 +9,31 @@
     <link href="assets/styles/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <style>
+        .nav-item {
+            font-family:  "Quicksand";
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        .navigation:hover {
+            color: #1a1e21 !important;
+        }
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .navbar-collapse{
+            flex-grow: 0;
+        }
+        #NavContent{
+            height: fit-content;
+            position: fixed;
+            z-index: 1000;
+        }
         #main2{
             width: 100vm;
             height: 100vh;
             background-size: 100%;
             /*overflow: hidden;*/
-        }
-        #back{
-            position: relative;
-            margin: auto;
-            left: 1100px;
-            right: 0;
-            bottom: 50px;
         }
         #carDetail{
             width: 100vm;
@@ -28,18 +41,22 @@
         }
         #mainCar{
             position: relative;
-            width: 780px;
+            width: 770px;
             height: 400px;
+            top: 40px;
             margin: auto;
-            right: 300px;
-            border: 1px solid red;
+            right: 240px;
+            /*border: 1px solid red;*/
+            border-radius: 30px;
+            background: url("assets/images/car03.jpg");
+            background-size: 100% 100%;
         }
         #mainCar1{
             position: relative;
-            width: 500px;
+            width: 430px;
             height: 400px;
-            bottom: 400px;
-            left: 350px;
+            bottom: 360px;
+            left: 360px;
             margin: auto;
             border: 1px solid red;
         }
@@ -47,11 +64,12 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 350px;
+            bottom: 310px;
             right: 400px;
             margin: auto;
-            border: 1px solid red;
-            box-shadow: 0px 5px 15px 1px #8b6161;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC1{
             position: absolute;
@@ -65,9 +83,11 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 750px;
+            bottom: 710px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC2{
             position: absolute;
@@ -81,10 +101,12 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 1150px;
+            bottom: 1110px;
             left: 400px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC3{
             position: absolute;
@@ -98,10 +120,12 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 1100px;
+            bottom: 1060px;
             right: 400px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC4{
             position: absolute;
@@ -115,9 +139,11 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 1500px;
+            bottom: 1460px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC5{
             position: absolute;
@@ -131,10 +157,12 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 1900px;
+            bottom: 1860px;
             left: 400px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC6{
             position: absolute;
@@ -148,10 +176,12 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 1850px;
+            bottom: 1810px;
             right: 400px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC7{
             position: absolute;
@@ -165,9 +195,11 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 2250px;
+            bottom: 2210px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC8{
             position: absolute;
@@ -181,10 +213,12 @@
             position: relative;
             width: 350px;
             height: 400px;
-            bottom: 2650px;
+            bottom: 2610px;
             left: 400px;
             margin: auto;
-            border: 1px solid red;
+            border-radius: 20px;
+            /*border: 1px solid red;*/
+            box-shadow: 0px 2px 10px 1px #8b6161;
         }
         #CC9{
             position: absolute;
@@ -197,40 +231,78 @@
 
     </style>
 </head>
-<body id="main2">
-<section class="container-fluid" id="carDetail">
-    <h1 class="text fw-bold mt-2" style="color:#2DABAB">Car Details</h1>
-    <a class=" btn btn-outline-success col-1 mt-3" href="index.html" id="back">Back</a>
-    <div id="mainCar"></div>
-    <div id="mainCar1"></div>
-    <div id="C1">
-        <div id="CC1"></div>
-    </div>
-    <div id="C2">
-        <div id="CC2"></div>
-    </div>
-    <div id="C3">
-        <div id="CC3"></div>
-    </div>
-    <div id="C4">
-        <div id="CC4"></div>
-    </div>
-    <div id="C5">
-        <div id="CC5"></div>
-    </div>
-    <div id="C6">
-        <div id="CC6"></div>
-    </div>
-    <div id="C7">
-        <div id="CC7"></div>
-    </div>
-    <div id="C8">
-        <div id="CC8"></div>
-    </div>
-    <div id="C9">
-        <div id="CC9"></div>
-    </div>
+<body>
 
+<!--------------------Nav Content Start--------------------------->
+<section class="container-fluid" id="NavContent">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
+        <div class="container-fluid">
+            <h1 id="fold_1" style="color: white">Ren<span style="color:#2DABAB">talCar.com</span></h1>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-4 ">
+                    <li class="nav-item me-3">
+                        <a aria-current="page" class="nav-link active navigation" href="index.html" id="linkHome">Home</a>
+                    </li>
+                    <li class="nav-item me-3" >
+                        <a class="nav-link active navigation" href="services.html" id="linkServices">Services</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="about.html" id="linkAbout">About</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="carDetails.html" id="linkCarDetails">Car Details</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-primary mx-2" href="loginForm.html" id="Customer">Login</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-success mx-2" href="signUp.html" >Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<!--------------------Car Detail Content Start--------------------------->
+<section  id="main2">
+    <section class="container-fluid" id="carDetail">
+        <h1 class="text fw-bold " style="color:#2DABAB">Car Details</h1>
+        <div id="mainCar"></div>
+        <div id="mainCar1"></div>
+        <div id="C1">
+            <div id="CC1"></div>
+        </div>
+        <div id="C2">
+            <div id="CC2"></div>
+        </div>
+        <div id="C3">
+            <div id="CC3"></div>
+        </div>
+        <div id="C4">
+            <div id="CC4"></div>
+        </div>
+        <div id="C5">
+            <div id="CC5"></div>
+        </div>
+        <div id="C6">
+            <div id="CC6"></div>
+        </div>
+        <div id="C7">
+            <div id="CC7"></div>
+        </div>
+        <div id="C8">
+            <div id="CC8"></div>
+        </div>
+        <div id="C9">
+            <div id="CC9"></div>
+        </div>
+
+    </section>
 </section>
 
 <script src="assets/boostrap/js/bootstrap.bundle.js"></script>

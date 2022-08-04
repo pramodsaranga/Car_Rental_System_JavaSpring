@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Account</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/css/all.min.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .nav-item {
+            font-family:  "Quicksand";
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        .navigation:hover {
+            color: #1a1e21 !important;
+        }
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .navbar-collapse{
+            flex-grow: 0;
+        }
+        #NavContent{
+            height: fit-content;
+            position: fixed;
+            z-index: 1000;
+        }
+        #adminImg {
+            width: 100vw;
+            height: 100vh;
+            background: url("assets/images/car10.jpg");
+            background-size: 100% 100%;
+        }
+        #side_bar{
+            background: white !important;
+            width: 240px;
+            height: 100%;
+            top: 15%;
+            position: fixed;
+            /*transition: all 0.4s;*/
+            opacity: 75%;
+        }
+        #adminDash{
+            width: 1025px;
+            height: 100%;
+            left: 240px;
+            position: fixed;
+            opacity: 75%;
+        }
+        #t1{
+            position: absolute;
+            margin: auto;
+            font-weight: bold;
+            top: 190px;
+            left: 150px;
+            font-family: Quicksand;
+            font-size: 100px;
+        }
+
+        /*manage car  */
+        #manageCarContent{
+            position: absolute;
+            width: 83vw;
+            height: 100vh;
+            right: 0;
+            top: 0;
+            left: 19vw;
+            background: #5c636a !important;;
+            opacity: 85%;
+        }
+        #manege_text2{
+            position: relative;
+            margin: auto;
+            left: 10px;
+            font-weight: bold;
+            font-family: Quicksand;
+            font-size: 60px;
+            color: #04414d;
+        }
+        #sec1Car{
+            position: absolute;
+            left: 2%;
+        }
+        #sec2Car{
+            position: absolute;
+            left: 25%;
+        }
+        #sec3Car{
+            position: absolute;
+            left: 49%;
+        }
+        #sec4Car{
+            position: absolute;
+            left: 73%;
+        }
+
+        #manageCarTableContent{
+            position: absolute;
+            width: 83vw;
+            height: 100vh;
+            right: 0;
+            top: 65%;
+            left: 0;
+            background: #5c636a !important;
+            opacity: 85%;
+        }
+        #car_Table{
+            position: relative;
+            margin: auto;
+        }
+
+
+
+        /*manage driver*/
+        #manageDriverContent{
+            position: absolute;
+            width: 83vw;
+            height: 100vh;
+            right: 0;
+            top: 0;
+            left: 19vw;
+            background: #5c636a !important;
+            opacity: 85%;
+        }
+        #manege_driver_text{
+            position: relative;
+            margin: auto;
+            left: 10px;
+            font-weight: bold;
+            font-family: Quicksand;
+            font-size: 60px;
+            color: #04414d;
+        }
+        #sec1Driver{
+            position: absolute;
+            left: 2%;
+        }
+        #sec2Driver{
+            position: absolute;
+            left: 25%;
+        }
+        #sec3Driver{
+            position: absolute;
+            left: 48%;
+        }
+        #sec4Driver{
+            position: absolute;
+            left: 71%;
+        }
+        #manageDriverTable{
+            position: absolute;
+            top: 60%;
+            left: 1%;
+        }
+
+    </style>
+</head>
+<body>
+<!--------------------Nav Content Start--------------------------->
+<section class="container-fluid" id="NavContent">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
+        <div class="container-fluid">
+            <h1 id="fold_1" style="color: white">Ren<span style="color:#2DABAB">talCar.com</span></h1>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-4 ">
+                    <li class="nav-item me-3">
+                        <a aria-current="page" class="nav-link active navigation" href="index.html" id="linkHome">Home</a>
+                    </li>
+                    <li class="nav-item me-3" >
+                        <a class="nav-link active navigation" href="services.html" id="linkServices">Services</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="about.html" id="linkAbout">About</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active navigation" href="carDetails.html" id="linkCarDetails">Car Details</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-primary mx-2" href="loginForm.html" id="Customer">Login</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a type="button" class="nav-link navigation btn btn-lg btn-success mx-2" href="signUp.html" >Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<!--------------------Admin Page Content Start--------------------------->
+<section class="container-fluid" id="adminPage">
+    <div id="adminImg">
+        <nav id="side_bar">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkManageCar" class="nav-link text-dark" href="#" ><i class="fas fa-solid fa-car-side" style="color: #04414d"></i>Booking Car</a>
+                </li>
+                <li class="nav-item btn btn-outline-primary col-12">
+                    <a id="linkManageDriver" class="nav-link text-dark" href="#"><i class="fas fa-solid fa-users" style="color: #04414d"></i>Show Cars</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="adminDash">
+            <a class="nav-link text-white" id="t1">W e l c o m e  !</a>
+        </div>
+    </div>
+</section>
+
+<!----------------------Manege Car Details----------------->
+
+<section class="container-fluid" id="manageCar">
+    <div id="manageCarContent">
+        <section class="container-fluid">
+            <h1 id="manege_text2" class="fw-bold">Booking Car</h1>
+        </section>
+        <section class="container-fluid mt-3" >
+            <div class="row mt-3">
+                <div class="col-4">
+                    <form id="carForm">
+                        <section id="sec1Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="carNumber">Car Number</label>
+                                <input class="form-control" id="carNumber" name="carNumber" placeholder="Car Number"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="transmission">Transmission</label>
+                                <input class="form-control" id="transmission" name="transmission" placeholder="Transmission"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec2Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="brand">Brand</label>
+                                <input class="form-control" id="brand" name="brand" placeholder="Brand"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="fuel">Fuel</label>
+                                <input class="form-control" id="fuel" name="fuel" placeholder="Fuel"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec3Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="type">Type</label>
+                                <input class="form-control" id="type" name="type" placeholder="Type"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="dailyRate">Daily Rate</label>
+                                <input class="form-control" id="dailyRate" name="dailyRate" placeholder="Daily Rate"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec4Car">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="passengers">Passengers</label>
+                                <input class="form-control" id="passengers" name="passengers" placeholder="Passengers"
+                                       type="text">
+                            </div>
+                            <div class="row-cols-12">
+                                <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>
+                                <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>
+                                <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>
+                            </div>
+                        </section>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+        <div id="manageCarTableContent" class="col">
+            <table class="table table-bordered table-hover" id="car_Table">
+                <thead class="bg-white text-black">
+                <tr>
+                    <th>Car Number</th>
+                    <th>Brand</th>
+                    <th>Type</th>
+                    <th>passengers</th>
+                    <th>Transmission</th>
+                    <th>Fuel</th>
+                    <th>Daily Rate</th>
+                    <th>Monthly Rate</th>
+                    <th>Free Km For day</th>
+                    <th>Free Km For Month</th>
+                    <th>Price Pre Extra KM</th>
+                    <th>Reg Number</th>
+                    <th>Color</th>
+                    <th>File</th>
+                    <th>Car Quantity</th>
+                </tr>
+                </thead>
+                <tbody id="tblCarJson">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>
+<!----------------------Manege Driver----------------->
+
+<section class="container-fluid" id="manageDriver">
+    <div id="manageDriverContent">
+        <section class="container-fluid">
+            <a class="fw-bold" id="manege_driver_text">Manage Driver</a>
+        </section>
+        <section class="container-fluid mt-3" >
+            <div class="row mt-3">
+                <div class="col-4">
+                    <form id="driverForm">
+                        <section id="sec1Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverId">Driver Id</label>
+                                <input class="form-control" id="driverId" name="driverId" placeholder="Driver Id"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverNic">Driver Nic</label>
+                                <input class="form-control" id="driverNic" name="driverNic" placeholder="Driver Nic"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverAge">Driver Age</label>
+                                <input class="form-control" id="driverAge" name="driverAge" placeholder="Driver Age"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec2Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverName">Driver Name</label>
+                                <input class="form-control" id="driverName" name="driverName" placeholder="Driver Name"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverLicense">Driver License</label>
+                                <input class="form-control" id="driverLicense" name="driverLicense" placeholder="Driver License"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverGender">Driver Gender</label>
+                                <input class="form-control" id="driverGender" name="driverGender" placeholder="Driver Gender"
+                                       type="text">
+                            </div>
+                        </section>
+                        <section id="sec3Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverEmail">Driver Email</label>
+                                <input class="form-control" id="driverEmail" name="driverEmail" placeholder="Driver Email"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverAddress">Driver Address</label>
+                                <input class="form-control"  id="driverAddress"  name="driverAddress" placeholder="Driver Address"
+                                       type="text">
+                            </div>
+
+                        </section>
+                        <section id="sec4Driver">
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="driverPassword">Driver Password</label>
+                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Driver Password"
+                                       type="text">
+                            </div>
+                            <div class="mb-sm-0">
+                                <label class="form-label fw-bold text-black" for="availability">Driver ContactNo</label>
+                                <input class="form-control" id="availability" name="availability" placeholder="Driver ContactNo"
+                                       type="text">
+                            </div>
+                            <div class="row-cols-4">
+                                <button type="button" class="btn btn-success col-3 mt-3" id="addDriver_btn">Save</button>
+                                <button type="button" class="btn btn-primary col-4 mt-3 mx-2" id="updateDriver_btn">Update</button>
+                                <button type="button" class="btn btn-danger col-3 mt-3" id="deleteDriver_btn">Delete</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+                <div id="manageDriverTable">
+                    <div class="col-12">
+                        <table class="table table-bordered table-hover">
+                            <thead class="bg-white text-black">
+                            <tr>
+                                <th>Driver Id</th>
+                                <th>Driver Name</th>
+                                <th>Driver Email</th>
+                                <th>Driver Password</th>
+                                <th>Driver Nic</th>
+                                <th>Driver License</th>
+                                <th>Driver Address</th>
+                                <th>Driver Contact No</th>
+                                <th>Driver Age</th>
+                                <th>Driver Gender</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tblDriverJson">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+
+
+
+<script src="assets/boostrap/js/bootstrap.bundle.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    $("#adminPage").css("display", "block");
+    $("#manageCar").css("display", "none");
+    $("#manageDriver").css("display", "none");
+    $("#manageCustomer").css("display", "none");
+
+    $("#linkManageCar").click(function () {
+        $("#manageCar").css("display", "block");
+        $("#manageDriver").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+    });
+
+    $("#linkManageDriver").click(function () {
+        $("#manageDriver").css("display", "block");
+        $("#manageCar").css("display", "none");
+        $("#manageCustomer").css("display", "none");
+    });
+
+
+
+
+
+</script>
+</body>
+</html>
