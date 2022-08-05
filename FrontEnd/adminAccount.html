@@ -272,7 +272,6 @@
 </section>
 
 <!----------------------Manege Car Details----------------->
-
 <section class="container-fluid" id="manageCar">
     <div id="manageCarContent">
         <section class="container-fluid">
@@ -365,10 +364,10 @@
                                        type="text">
                             </div>
                             <div class="row-cols-12">
-                                <button type="button" class="btn btn-success mt-4" id="addCar">Save</button>
-                                <button type="button" class="btn btn-primary mt-4" id="updateCar">Update</button>
-                                <button type="button" class="btn btn-danger mt-4" id="deleteCar">Delete</button>
-                                <button type="button" class="btn btn-warning  mt-3" id="getAllCar_btn">Get All</button>
+                                <button type="button" class="btn btn-success mt-4" id="btnSaveCar">Save</button>
+                                <button type="button" class="btn btn-primary mt-4" id="btnUpdateCar">Update</button>
+                                <button type="button" class="btn btn-danger mt-4" id="btnDeleteCar">Delete</button>
+                                <button type="button" class="btn btn-warning  mt-3" id="btnGetAllCar">Get All</button>
                             </div>
                         </section>
 
@@ -379,7 +378,7 @@
 
         </section>
         <div id="manageCarTableContent" class="col">
-            <table class="table table-bordered table-hover" id="car_Table">
+            <table class="table table-bordered table-hover" id="carTable">
                 <thead class="bg-white text-black">
                 <tr>
                     <th>Car Number</th>
@@ -400,19 +399,7 @@
                 </tr>
                 </thead>
                 <tbody id="tblCarJson">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
                 </tbody>
-
             </table>
         </div>
     </div>
@@ -604,6 +591,237 @@
         $("#manageCar").css("display", "none");
     });
 
+    // ---------------------------Car ajax part-----------------------------------
+
+    $("#carNumber").on("keypress", function (e) {
+        if (e.key == "Enter") {
+            searchCar();
+        }
+    });
+
+    //Get All Driver Event
+    $("#btnGetAllCar").click(function () {
+        loadAllCars();
+    });
+
+    $("#btnSaveCar").click(function () {
+        saveCar();
+    });
+
+    //Delete Driver Event
+    $("#btnDeleteCar").click(function () {
+        deleteCar();
+    });
+
+    //Update Driver Event
+    $("#btnUpdateCar").click(function () {
+        updateCar();
+    });
+
+    //Bind click events to the table rows
+    function bindClickEvents() {
+        $("#carTable>tr").click(function () {
+
+            let cr_carNumber =$(this).children().eq(0).text();
+            let cr_brand = $(this).children().eq(1).text();
+            let cr_type =$(this).children().eq(2).text();
+            let cr_passengers =$(this).children().eq(3).text();
+            let cr_transmission =$(this).children().eq(4).text();
+            let cr_fuel = $(this).children().eq(5).text();
+            let cr_dailyRate =$(this).children().eq(6).text();
+            let cr_monthlyRate = $(this).children().eq(7).text();
+            let cr_freeKmForDay = $(this).children().eq(8).text();
+            let cr_freeKmForMonth = $(this).children().eq(9).text();
+            let cr_pricePerExtraKm = $(this).children().eq(10).text();
+            let cr_regNumber= $(this).children().eq(11).text();
+            let cr_color = $(this).children().eq(12).text();
+            let cr_file = $(this).children().eq(13).text();
+            let cr_carQuantity = $(this).children().eq(14).text();
+
+            //Set values to the text-fields
+            $("#carNumber").val(cr_carNumber);
+            $("#brand").val(cr_brand);
+            $("#type").val(cr_type);
+            $("#passengers").val(cr_passengers);
+            $("#transmission").val(cr_transmission);
+            $("#fuel").val(cr_fuel);
+            $("#dailyRate").val(cr_dailyRate);
+            $("#monthlyRate").val(cr_monthlyRate);
+            $("#freeKmForDay").val(cr_freeKmForDay);
+            $("#freeKmForMonth").val(cr_freeKmForMonth);
+            $("#pricePerExtraKm").val(cr_pricePerExtraKm);
+            $("#regNumber").val(cr_regNumber);
+            $("#color").val(cr_color);
+            $("#file").val(cr_file);
+            $("#carQuantity").val(cr_carQuantity);
+        });
+    }
+
+
+    // Methods
+    loadAllCars();
+
+    //Save Car
+    function saveCar() {
+        var data = $("#carForm").serialize(); // return query string of form with name:type-value
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/car",
+            method: "POST",
+            data: data,// if we send data with the request
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Successfully Car Save");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    function loadAllCars() {
+        $("#tblCarJson").empty();
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/car",
+            method: "GET",
+            // dataType:"json", // please convert the response into JSON
+            success: function (resp) {
+
+                for (let i of resp.data) {
+                    var row = `<tr><td>${i.carNumber}</td><td>${i.brand}</td><td>${i.type}</td><td>${i.passengers}</td><td>${i.transmission}</td><td>${i.fuel}</td><td>${i.dailyRate}</td><td>${i.monthlyRate}</td><td>${i.freeKmForDay}</td><td>${i.freeKmForMonth}</td><td>${i.pricePerExtraKm}</td><td>${i.regNumber}</td><td>${i.color}</td><td>${i.file}</td><td>${i.carQuantity}</td></tr>`;
+                    $("#tblCarJson").append(row);
+                }
+                bindClickEvents();
+                clearForm();
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Update Driver
+    function updateCar() {
+        //creating a js object with relevant data which you  send to the server
+        var carOb = {
+            carNumber: $("#carNumber").val(),
+            brand:$("#brand").val(),
+            type:$("#type").val(),
+            passengers:$("#passengers").val(),
+            transmission:$("#transmission").val(),
+            fuel:$("#fuel").val(),
+            dailyRate:$("#dailyRate").val(),
+            monthlyRate:$("#monthlyRate").val(),
+            freeKmForDay:$("#freeKmForDay").val(),
+            freeKmForMonth: $("#freeKmForMonth").val(),
+            pricePerExtraKm: $("#pricePerExtraKm").val(),
+            regNumber: $("#regNumber").val(),
+            color: $("#color").val(),
+            file: $("#file").val(),
+            carQuantity: $("#carQuantity").val()
+        }
+
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/car" ,
+            method: "PUT",
+            contentType: "application/json", //You should state request's content type using MIME types
+            data: JSON.stringify(carOb), // format js object to valid json string
+            success: function (res) {
+                if (res.code == 200) { // process is  ok
+                    alert("Successfully Updated");
+                    loadAllCars();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Delete Customer
+    function deleteCar() {
+        // Get the customer id
+        let carNumber = $("#carNumber").val();
+
+        // initiate the request
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/car" + "?id=" + carNumber,// viya query string
+            method: "DELETE",
+            //data:data,// application/x-www-form-urlencoded
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Car Successfully Deleted");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Search Customer
+    function searchCar() {
+        var carNumber = $("#carNumber").val();
+
+        $.ajax({
+            url:  "http://localhost:8080/BackEnd_war/api/v1/car" + "/" + carNumber,
+            method: "GET",
+            success: function (res) {
+                if (res.code = 200) {
+                    var car = res.data;
+                    $("#carNumber").val(car.carNumber);
+                    $("#brand").val(car.brand);
+                    $("#type").val(car.type);
+                    $("#passengers").val(car.passengers);
+                    $("#transmission").val(car.transmission);
+                    $("#fuel").val(car.fuel);
+                    $("#dailyRate").val(car.dailyRate);
+                    $("#monthlyRate").val(car.monthlyRate);
+                    $("#freeKmForDay").val(car.freeKmForDay);
+                    $("#freeKmForMonth").val(car.freeKmForMonth);
+                    $("#pricePerExtraKm").val(car.pricePerExtraKm);
+                    $("#regNumber").val(car.regNumber);
+                    $("#color").val(car.color);
+                    $("#file").val(car.file);
+                    $("#carQuantity").val(car.carQuantity);
+                } else {
+                    clearForm();
+                }
+            },
+            error:function (ob){
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Clear Customer Input Fields
+    function clearForm() {
+        $("#carNumber").focus();
+        $("#brand").val();
+        $("#type").val();
+        $("#passengers").val();
+        $("#transmission").val();
+        $("#fuel").val();
+        $("#dailyRate").val();
+        $("#monthlyRate").val();
+        $("#freeKmForDay").val();
+        $("#freeKmForMonth").val();
+        $("#pricePerExtraKm").val();
+        $("#regNumber").val();
+        $("#color").val();
+        $("#file").val();
+        $("#carQuantity").val();
+        $("#carNumber").focus();
+    }
+
+
+
+// ---------------------------Driver ajax part-----------------------------------
     $("#driverId").on("keypress", function (e) {
         if (e.key == "Enter") {
             searchDriver();
@@ -662,7 +880,7 @@
     // Methods
     loadAllDrivers();
 
-    //Save Customer
+    //Save Driver
     function saveDriver() {
             var data = $("#driverForm").serialize(); // return query string of form with name:type-value
             $.ajax({
@@ -706,7 +924,7 @@
     //Update Driver
     function updateDriver() {
         //creating a js object with relevant data which you  send to the server
-        var cusOb = {
+        var driverOb = {
             driverId: $("#driverId").val(),
             name:$("#driverName").val(),
             address:$("#driverAddress").val(),
@@ -723,7 +941,7 @@
             url:"http://localhost:8080/BackEnd_war/api/v1/driver" ,
             method: "PUT",
             contentType: "application/json", //You should state request's content type using MIME types
-            data: JSON.stringify(cusOb), // format js object to valid json string
+            data: JSON.stringify(driverOb), // format js object to valid json string
             success: function (res) {
                 if (res.code == 200) { // process is  ok
                     alert("Successfully Updated");
@@ -737,9 +955,9 @@
         });
     }
 
-    //Delete Customer
+    //Delete Driver
     function deleteDriver() {
-        // Get the customer id
+        // Get the Driver id
         let driverId = $("#driverId").val();
 
         // initiate the request
@@ -760,7 +978,7 @@
         });
     }
 
-    //Search Customer
+    //Search Driver
     function searchDriver() {
         var driverId = $("#driverId").val();
 
@@ -790,7 +1008,7 @@
         });
     }
 
-    //Clear Customer Input Fields
+    //Clear Driver Input Fields
     function clearForm() {
         $("#driverId").focus();
         $("#driverName").val();
@@ -804,6 +1022,7 @@
         $("#driverPassword").val();
         $("#driverId").focus();
     }
+
 </script>
 </body>
 </html>
