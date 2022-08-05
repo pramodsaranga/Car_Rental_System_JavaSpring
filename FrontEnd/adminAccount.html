@@ -165,7 +165,7 @@
             top: 23%;
         }
 
-        #tblDriver{
+        #driverTable{
             position: absolute;
             top: 72%;
             left: 1%;
@@ -200,6 +200,7 @@
             top: 44%;
             bottom: 0;
         }
+
 
     </style>
 </head>
@@ -452,7 +453,7 @@
                             </div>
                             <div class="mb-sm-0">
                                 <label class="form-label fw-bold text-black" for="driverLicense">Driver License</label>
-                                <input class="form-control" id="driverLicense" name="driverLicenseNo" placeholder="Driver License"
+                                <input class="form-control" id="driverLicense" name="drivingLicenseNo" placeholder="Driver License"
                                        type="text">
                             </div>
                             <div class="mb-sm-0">
@@ -494,9 +495,9 @@
                         </section>
                     </form>
                 </div>
-                <div id="tblDriver">
+                <div>
                     <div class="col-12">
-                        <table class="table table-bordered table-hover">
+                        <table id="driverTable" class="table table-bordered table-hover">
                             <thead class="bg-white text-black">
                             <tr>
                                 <th>Driver Id</th>
@@ -511,19 +512,7 @@
                                 <th>Driver Gender</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            <tbody id="tblDriverJson">
                             </tbody>
                         </table>
                     </div>
@@ -538,7 +527,7 @@
     <section class="container-fluid">
         <h1 id="manege_cus_text" class="fw-bold">Manage Customer</h1>
     </section>
-    <div id="manageCusTable">
+    <div id="tblCustomer">
         <div class="col-11 mx-3 mt-3">
             <table class="table table-bordered table-hover">
                 <thead class="bg-white text-black">
@@ -642,7 +631,7 @@
 
     //Bind click events to the table rows
     function bindClickEvents() {
-        $("#tblDriver>tr").click(function () {
+        $("#driverTable>tr").click(function () {
 
             let dr_id =$(this).children().eq(0).text();
             let dr_name = $(this).children().eq(1).text();
@@ -693,9 +682,8 @@
             });
     }
 
-
     function loadAllDrivers() {
-        $("#tblDriver").empty();
+        $("#tblDriverJson").empty();
         $.ajax({
             url:"http://localhost:8080/BackEnd_war/api/v1/driver",
             method: "GET",
@@ -704,7 +692,7 @@
 
                 for (let i of resp.data) {
                     var row = `<tr><td>${i.driverId}</td><td>${i.name}</td><td>${i.address}</td><td>${i.age}</td><td>${i.contact}</td><td>${i.gender}</td><td>${i.nic}</td><td>${i.drivingLicenseNo}</td><td>${i.email}</td><td>${i.password}</td></tr>`;
-                    $("#tblDriver").append(row);
+                    $("#tblDriverJson").append(row);
                 }
                 bindClickEvents();
                 clearForm();
@@ -816,8 +804,6 @@
         $("#driverPassword").val();
         $("#driverId").focus();
     }
-
-
 </script>
 </body>
 </html>
