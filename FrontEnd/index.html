@@ -21,7 +21,7 @@
             font-size: 18px;
         }
         .navigation:hover {
-            color: #1a1e21 !important;
+            color: #4e738e !important;
         }
         .container-fluid {
             padding-left: 0;
@@ -70,15 +70,19 @@
             background: url("assets/images/car1.jpg");
             background-size: 100% 100%;
         }
+        #fold_1{
+            position: relative;
+            left: 20px;
+        }
 
     </style>
 </head>
 <body>
 <!--------------------Nav Content Start--------------------------->
 <section class="container-fluid" id="NavContent">
-    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark navtop ">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light navtop ">
         <div class="container-fluid">
-            <h1 id="fold_1" style="color: white">Ren<span style="color:#2DABAB">talCar.com</span></h1>
+            <h1 id="fold_1"  style="color: #5c636a">Ren<span style="color:#2DABAB">talCar.com</span></h1>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler"
                     data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
@@ -87,22 +91,22 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto  mb-lg-4 ">
                     <li class="nav-item me-3">
-                        <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
+                        <a aria-current="page" class="nav-link active navigation" style="color: #5c636a" href="#" id="linkHome">Home</a>
                     </li>
                     <li class="nav-item me-3" >
-                        <a class="nav-link active navigation" href="services.html" id="linkServices">Services</a>
+                        <a class="nav-link active navigation" href="services.html" style="color: #5c636a" id="linkServices">Services</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link active navigation" href="about.html" id="linkAbout">About</a>
+                        <a class="nav-link active navigation" href="about.html" style="color: #5c636a" id="linkAbout">About</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link active navigation" href="carDetails.html" id="linkCarDetails">Car Details</a>
+                        <a class="nav-link active navigation" href="carDetails.html" style="color: #5c636a" id="linkCarDetails">Car Details</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a type="button" class="nav-link navigation btn btn-lg btn-primary mx-2" href="loginForm.html" id="Customer">Login</a>
+                        <a type="button" class=" btn  btn-primary text-white mx-2" style="color: #5c636a" href="loginForm.html" id="Customer">Login</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a type="button" class="nav-link navigation btn btn-lg btn-success mx-2" href="signUp.html" >Sign Up</a>
+                        <a type="button" class=" btn  btn-success text-white mx-2" href="signUp.html" >Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -124,7 +128,6 @@
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
     $("#dashBoardContent").css("display", "block");
-
 
 </script>
 </body>

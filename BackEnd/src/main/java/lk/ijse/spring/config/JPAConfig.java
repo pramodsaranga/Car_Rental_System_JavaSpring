@@ -28,10 +28,10 @@ import java.sql.Driver;
 @PropertySource("classpath:application.properties")
 public class JPAConfig {
 
-    @Autowired
+    @Autowired // object ekak class ekata implecity  inject karanna
     Environment environment;
 
-    @Bean
+    @Bean // bean class ekak hadanna
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter va) {
         LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
         bean.setJpaVendorAdapter(va); // Vendor (Hibernate)
